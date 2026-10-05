@@ -1,4 +1,4 @@
-# Road to Detection Engineering
+# Road to HTB DE
 
 **Live site:** https://thefinalflex.github.io/road-to-detection-engineering/
 
@@ -15,7 +15,7 @@ This is an independent guide, not an official HTB syllabus. The certification's 
 - Responsive layout, keyboard-accessible controls, and reduced-motion support.
 - Downloadable Markdown checklist.
 
-Google Fonts supplies the page typefaces; system fonts remain available as a fallback. Training resources open on the providers' websites and may require their own accounts or subscriptions.
+System monospace fonts keep the page lightweight. A single externally hosted BLAME! architectural image provides the visual reference, credited to Tsutomu Nihei with its Pinterest source linked on the page. The image is not included in the repository. Training resources open on the providers' websites and may require their own accounts or subscriptions.
 
 ## Run locally
 

@@ -38,7 +38,7 @@
       storageWorks = false;
       notify('Browser storage is unavailable. Export your progress to keep a backup.');
     }
-    document.querySelector('.local-note').textContent = storageWorks ? '◈ Saved in this browser. No account needed.' : '◈ Storage unavailable. Export to save your progress.';
+    document.querySelector('.local-note').textContent = storageWorks ? 'Progress saves in this browser. Export it to move devices.' : 'Storage unavailable. Export to save your progress.';
   }
 
   function updateProgress() {
@@ -49,7 +49,6 @@
     document.getElementById('progress-fill').style.width = percentage + '%';
     document.getElementById('progress-track').setAttribute('aria-valuenow', count);
     document.getElementById('all-complete').textContent = `${completed.size} / ${steps.length} study steps done`;
-    document.getElementById('start-learning').innerHTML = completed.size ? 'Continue the roadmap <span aria-hidden="true">↘</span>' : 'Start the roadmap <span aria-hidden="true">↘</span>';
     for (const phase of roadmap.phases) {
       const phaseCount = phase.steps.filter(step => completed.has(step.id)).length;
       const navCount = document.querySelector(`[data-phase-count="${phase.id}"]`);
@@ -222,7 +221,6 @@
     } catch { /* Keep current progress when another tab writes invalid data. */ }
   });
 
-  document.getElementById('ost2-count').textContent = steps.filter(step => step.provider === 'OST2').length;
-  if (!storageWorks) document.querySelector('.local-note').textContent = '◈ Storage unavailable. Export to save your progress.';
+  if (!storageWorks) document.querySelector('.local-note').textContent = 'Storage unavailable. Export to save your progress.';
   render();
 })();

@@ -34,6 +34,8 @@ Sources: [HTB announcement](https://www.hackthebox.com/blog/htb-new-platform-cap
    - Cover processes, threads, virtual memory, handles, tokens, DLL loading, Win32/Native APIs, and PE headers, sections, imports, and relocations.
    - Compile small programs and inspect them in a debugger/disassembler.
    - Resources: selected [Windows Internals material](https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals), [processes and threads](https://learn.microsoft.com/en-us/windows/win32/procthread/processes-and-threads), [PE format](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format), and [OST2 Introductory IDA](https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg1101_IntroIDA%2B2024_v1/about).
+   - **Paid Windows alternative:** start with Pavel Yosifovich's [TrainSec Windows Internals: Day 1](https://trainsec.net/courses/windows-internals-day-1/) for architecture and introductory WinDbg. Choose the [five-course Windows Internals Bundle](https://trainsec.net/courses/windows-internals-bundle/) for a more comprehensive foundation. The Microsoft API/PE documentation and OST2 lessons remain the free route; the Windows Internals book is an optional paid reference.
+   - **Practical WinAPI gaps:** use selected lessons from [TrainSec Windows System Programming](https://trainsec.net/courses/windows-system-programming-bundle/) on handles/processes, threads/memory, and DLLs/tokens/COM. These are paid alternatives and supplements, not extra certification requirements; do not buy or complete every bundle.
    - Work through Dbg1101 if IDA is new. It introduces the interface and debugger; it is not a complete reverse-engineering curriculum. Practice navigating functions and cross-references during your HTB malware and tradecraft work.
    - Learn enough to connect source code, assembly, API calls, and memory. Do not make cover-to-cover textbook completion a prerequisite.
 
@@ -42,6 +44,7 @@ Sources: [HTB announcement](https://www.hackthebox.com/blog/htb-new-platform-cap
    - Practice breakpoints, arguments, registers, memory, call stacks, and the module's user/kernel debugging exercises.
    - Work through [OST2 Dbg1011: Introductory WinDbg](https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg1011_WinDbg1%2B2024_v1/about) first if WinDbg is new; use it as a reference if you already have the equivalent skills.
    - Placing WinDbg before Introduction to Detection Engineering is a study recommendation, not its listed prerequisite.
+   - **Optional paid DFIR enrichment:** [13Cubed Investigating Windows Memory](https://training.13cubed.com/investigating-windows-memory) teaches memory investigation with Volatility, MemProcFS, and introductory WinDbg, including injection and hooks. It complements C++/WinAPI preparation; it is not a certification gate. Investigating Windows Endpoints is optional for disk-artifact forensics gaps.
 
 6. [ ] **Intro to Academy's Purple Modules → Detection & OpSec Cyber Range.**
    - [Purple introduction](https://academy.hackthebox.com/course/preview/intro-to-academys-purple-modules) → [Cyber Range](https://academy.hackthebox.com/course/preview/detection--opsec-cyber-range).
