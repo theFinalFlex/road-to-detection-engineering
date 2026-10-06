@@ -8,7 +8,7 @@ A topic guide to detection engineering, arranged in a suggested learning order. 
 
 Free courses, paid courses, and books are grouped under the topic they support. A reference may cover only part of a topic; the note explains its use. You do not need to finish every resource.
 
-## 1. Foundations
+## Foundations
 
 Learn the skill, choose the resource that suits you, and skip foundations you can already apply.
 
@@ -166,7 +166,7 @@ Read PE files and follow a program’s behavior in a disassembler.
 
 - [Practical Malware Analysis](https://nostarch.com/malware.htm) — Use selected PE, IDA, and analysis labs; older tool screenshots and OS behavior need current references.
 
-## 2. Observe and detect
+## Observe and detect
 
 Use debugging and telemetry to turn Windows behavior into tested detections.
 
@@ -325,7 +325,7 @@ Deepen your understanding of low-level behavior and detection coverage.
 
 - [HTB · Windows Low Level Detectability](https://academy.hackthebox.com/course/preview/windows-low-level-detectability) — Apply assembly, injection, C/C++, and YARA/Sigma foundations in HTB.
 
-## 3. Windows Tradecraft
+## Windows Tradecraft
 
 Use stronger debugging and Windows platform knowledge to analyze persistence, escalation, and credential access.
 
@@ -459,7 +459,7 @@ Analyze credential-access behavior and turn the evidence into detections.
 
 - [HTB · Credential Access Tradecraft Analysis](https://academy.hackthebox.com/course/preview/credential-access-tradecraft-analysis) — Apply AD, WinDbg, C/C++, Win32, and Splunk foundations to the proposed HTB module.
 
-## 4. Windows kernel
+## Windows kernel
 
 Connect Windows kernel behavior to the telemetry used by detections.
 
@@ -505,7 +505,7 @@ Build detections with a deeper understanding of kernel-level telemetry.
 - [HTB · Windows Kernel Telemetry & Detection Techniques](https://academy.hackthebox.com/course/preview/windows-kernel-telemetry--detection-techniques) — Apply injection, WinDbg, assembly, C/C++, and Windows internals to detection telemetry.
 - [TrainSec · EDR Internals: Research & Development](https://trainsec.net/courses/edr-internals-research-development/) — Optional paid depth specifically on EDR sensors, kernel callbacks, and detection components; this broader course is not needed for HTB completion.
 
-## 5. Linux detection
+## Linux detection
 
 Follow Linux processes, memory, and system calls into injection analysis and detection.
 
@@ -586,7 +586,7 @@ Apply Linux execution and memory knowledge to injection analysis and detection.
 
 - [The Linux Programming Interface](https://nostarch.com/tlpi) — Return to process, signal, and memory APIs when the Linux execution model is unclear.
 
-## 6. Certification
+## Certification
 
 Use HTB’s published path and exam guide to confirm eligibility.
 

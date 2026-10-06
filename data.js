@@ -47,7 +47,6 @@ window.ROADMAP = {
           ],
           "goal": "You can investigate a Windows alert, write a basic rule, test a benign case, and explain your evidence.",
           "platform": "shared",
-          "symbol": "detection",
           "htbModule": false
         },
         {
@@ -96,7 +95,6 @@ window.ROADMAP = {
           ],
           "goal": "You can compile and debug a small C program with pointers and structs, read basic C++, and parse a log in Python.",
           "platform": "shared",
-          "symbol": "code",
           "htbModule": false
         },
         {
@@ -138,7 +136,6 @@ window.ROADMAP = {
           ],
           "goal": "You can trace a short compiled function, identify arguments and return values, and explain its stack frame.",
           "platform": "shared",
-          "symbol": "chip",
           "htbModule": false
         },
         {
@@ -168,7 +165,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain virtual versus physical memory and why a user-mode program needs system calls.",
           "platform": "shared",
-          "symbol": "chip",
           "htbModule": false
         },
         {
@@ -211,7 +207,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a process’s threads, handles, token, loaded modules, and memory layout.",
           "platform": "windows",
-          "symbol": "windows",
           "htbModule": false
         },
         {
@@ -253,7 +248,6 @@ window.ROADMAP = {
             }
           ],
           "platform": "windows",
-          "symbol": "code",
           "htbModule": false
         },
         {
@@ -296,7 +290,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a small PE’s imports and sections and follow an interesting function through disassembly.",
           "platform": "windows",
-          "symbol": "binary",
           "htbModule": false
         }
       ]
@@ -347,7 +340,6 @@ window.ROADMAP = {
           ],
           "goal": "You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory.",
           "platform": "windows",
-          "symbol": "debugger",
           "htbModule": true
         },
         {
@@ -371,7 +363,6 @@ window.ROADMAP = {
           ],
           "goal": "You can connect to the lab, follow its workflow, and locate the evidence you need.",
           "platform": "shared",
-          "symbol": "lab",
           "htbModule": true
         },
         {
@@ -407,7 +398,6 @@ window.ROADMAP = {
           ],
           "goal": "You can reproduce a lab action, collect its logs, and check whether a detection sees it.",
           "platform": "shared",
-          "symbol": "detection",
           "htbModule": true
         },
         {
@@ -443,7 +433,6 @@ window.ROADMAP = {
           ],
           "goal": "You can document a tested rule, its required telemetry, and likely false positives.",
           "platform": "shared",
-          "symbol": "detection",
           "htbModule": true
         },
         {
@@ -479,7 +468,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain how a token change affects identity, privileges, and observable behavior.",
           "platform": "windows",
-          "symbol": "identity",
           "htbModule": true
         },
         {
@@ -521,7 +509,6 @@ window.ROADMAP = {
           ],
           "goal": "You can connect an injection technique to API behavior, suspicious memory, and telemetry.",
           "platform": "windows",
-          "symbol": "memory",
           "htbModule": true
         },
         {
@@ -551,7 +538,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain what an API hook observes, changes, and misses.",
           "platform": "windows",
-          "symbol": "trace",
           "htbModule": true
         },
         {
@@ -575,7 +561,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain which low-level signals support a detection and where visibility can fail.",
           "platform": "windows",
-          "symbol": "trace",
           "htbModule": true
         }
       ]
@@ -619,7 +604,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain COM activation and inspect a WMI namespace, provider, and event subscription.",
           "platform": "windows",
-          "symbol": "network",
           "htbModule": false
         },
         {
@@ -654,7 +638,6 @@ window.ROADMAP = {
           ],
           "goal": "You can trace WMI activity from the underlying mechanism to its detection evidence.",
           "platform": "windows",
-          "symbol": "trace",
           "htbModule": true
         },
         {
@@ -689,7 +672,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a persistence mechanism, its artifacts, and a validated detection.",
           "platform": "windows",
-          "symbol": "persistence",
           "htbModule": true
         },
         {
@@ -719,7 +701,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.",
           "platform": "windows",
-          "symbol": "privilege",
           "htbModule": false
         },
         {
@@ -743,7 +724,6 @@ window.ROADMAP = {
           ],
           "goal": "You can connect an escalation’s code behavior to the resulting telemetry.",
           "platform": "windows",
-          "symbol": "privilege",
           "htbModule": true
         },
         {
@@ -779,7 +759,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites.",
           "platform": "windows",
-          "symbol": "identity",
           "htbModule": false
         },
         {
@@ -808,7 +787,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a credential-access behavior, its required access, and useful detection evidence.",
           "platform": "windows",
-          "symbol": "identity",
           "htbModule": true
         }
       ]
@@ -859,7 +837,6 @@ window.ROADMAP = {
           ],
           "goal": "You can attach to a lab kernel, inspect its state, and explain the objects and execution context relevant to your telemetry.",
           "platform": "windows",
-          "symbol": "chip",
           "htbModule": false
         },
         {
@@ -895,7 +872,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a kernel telemetry source, its evidence, and its limitations.",
           "platform": "windows",
-          "symbol": "trace",
           "htbModule": true
         }
       ]
@@ -939,7 +915,6 @@ window.ROADMAP = {
           ],
           "goal": "You can inspect a Linux process, explain its permissions and open files, and troubleshoot basic connectivity.",
           "platform": "linux",
-          "symbol": "linux",
           "htbModule": false
         },
         {
@@ -969,7 +944,6 @@ window.ROADMAP = {
           ],
           "goal": "You can break on a function and inspect registers, arguments, stack frames, and memory in GDB.",
           "platform": "linux",
-          "symbol": "debugger",
           "htbModule": false
         },
         {
@@ -999,7 +973,6 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a stack overwrite in a lab and follow the changed control flow in GDB.",
           "platform": "linux",
-          "symbol": "memory",
           "htbModule": false
         },
         {
@@ -1034,7 +1007,6 @@ window.ROADMAP = {
           ],
           "goal": "You can connect Linux injection behavior to process memory and detection evidence.",
           "platform": "linux",
-          "symbol": "memory",
           "htbModule": true
         }
       ]
@@ -1075,7 +1047,6 @@ window.ROADMAP = {
           ],
           "goal": "HTB shows the official path at 100% and you have met that certification’s published exam and voucher requirements.",
           "platform": "shared",
-          "symbol": "certificate",
           "htbModule": false
         }
       ]
