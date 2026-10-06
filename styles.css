@@ -23,3 +23,26 @@ a,summary{touch-action:manipulation}a:focus-visible,summary:focus-visible{outlin
 .page-footer{border-top:1px solid #555;padding-top:18px;margin-top:32px;font-size:9px;color:var(--muted)}.page-footer>div{display:flex;justify-content:space-between;gap:20px}.art-credit{margin-top:18px;font-size:8px;color:#92928d}
 @media(max-width:620px){.page{padding:22px 18px}.topline{font-size:8px;letter-spacing:.8px;margin-bottom:15px}.art-strip{height:116px}.title-row{margin-top:20px;gap:8px}h1{font-size:clamp(27px,7.3vw,43px);letter-spacing:-1.4px}.edition{font-size:8px}.intro{font-size:11px;margin-top:9px}.roadmap-note{font-size:9px}.phase-nav{gap:7px 14px;font-size:8px;margin-top:22px;padding-block:14px}.phase-nav a>span{font-size:7px}.wiki-hint{font-size:9px;margin-bottom:25px}.phase-heading{gap:10px}.phase h2{font-size:16px}.phase-description{font-size:10px}.topic>summary{font-size:12px;padding-block:14px}.topic-content{margin-right:0;padding-left:12px}.topic-summary,.topic-notes{font-size:11px}.topic-goal{font-size:10px}.resources-by-type{gap:15px}.resource-group ul{grid-template-columns:1fr;gap:14px}.manga-panel{width:200px;margin:28px 0 36px 6%}.manga-panel-right{width:220px;margin-left:auto;margin-right:6%}.manga-panel figcaption{font-size:6px}.page-footer>div{flex-direction:column;gap:10px}.page-footer{font-size:8px}.art-credit{font-size:7px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Small monochrome subject marks; the wiki stays a plain reading list. */
+.symbol{display:inline-block;width:20px;height:20px;flex:none;vertical-align:middle}
+.brand-symbol{filter:invert(1);opacity:.86}
+.topic>summary{display:grid;grid-template-columns:28px minmax(0,1fr) auto 12px;gap:12px}
+.topic-symbol{grid-column:1;display:grid;place-items:center;width:27px;height:27px;color:#b7b7b0;background:linear-gradient(#686861,#686861) top left/5px 1px no-repeat,linear-gradient(#686861,#686861) top left/1px 5px no-repeat,linear-gradient(#686861,#686861) bottom right/5px 1px no-repeat,linear-gradient(#686861,#686861) bottom right/1px 5px no-repeat}
+.topic-symbol .symbol{width:19px;height:19px}
+.topic-heading{grid-column:2;min-width:0}
+.topic-name{display:inline}
+.topic-chevron{grid-column:4}
+.htb-mark{display:inline-block;white-space:nowrap;margin-left:9px;vertical-align:baseline}
+.htb-mark .symbol{width:15px;height:15px;vertical-align:-2px}
+.platform-marker{grid-column:3;display:inline-flex;align-items:center;gap:5px;color:#a3a39c;font-size:9px;white-space:nowrap}
+.platform-marker .symbol{width:13px;height:13px}
+.resource-symbols{display:inline-flex;gap:4px;align-items:center;margin-right:6px;vertical-align:-2px}
+.resource-symbols .symbol{width:13px;height:13px}
+.topic-content{margin-left:40px}
+.manga-panel{width:380px;max-width:82%}
+.manga-panel-right{width:280px}
+.manga-panel figcaption q{display:block;font-size:11px;line-height:1.7;color:#c1c1bb;margin:11px 0 7px}
+.manga-panel figcaption>span{display:block}
+@media(max-width:620px){.topic>summary{grid-template-columns:24px minmax(0,1fr) 10px;gap:4px 10px}.topic-symbol{width:23px;height:23px;grid-row:1}.topic-symbol .symbol{width:17px;height:17px}.topic-chevron{grid-column:3;grid-row:1}.platform-marker{grid-column:2;grid-row:2;font-size:8px}.platform-marker .symbol{width:11px;height:11px}.htb-mark{margin-left:6px}.htb-mark .symbol{width:13px;height:13px}.topic-content{margin-left:34px}.manga-panel{width:300px;max-width:88%}.manga-panel-right{width:240px}.manga-panel figcaption q{font-size:10px}}
+.language-mark{display:inline-block;margin-left:8px;white-space:nowrap}.language-mark .symbol{width:15px;height:15px;vertical-align:-2px}

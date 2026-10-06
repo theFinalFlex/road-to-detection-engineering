@@ -45,7 +45,10 @@ window.ROADMAP = {
               "note": "Paid depth on event logs, registry, execution evidence, and disk artifacts; it does not cover memory forensics."
             }
           ],
-          "goal": "You can investigate a Windows alert, write a basic rule, test a benign case, and explain your evidence."
+          "goal": "You can investigate a Windows alert, write a basic rule, test a benign case, and explain your evidence.",
+          "platform": "shared",
+          "symbol": "detection",
+          "htbModule": false
         },
         {
           "id": "programming",
@@ -91,7 +94,10 @@ window.ROADMAP = {
               "note": "A book-based C route with exercises; focus on pointers, arrays, structures, and memory."
             }
           ],
-          "goal": "You can compile and debug a small C program with pointers and structs, read basic C++, and parse a log in Python."
+          "goal": "You can compile and debug a small C program with pointers and structs, read basic C++, and parse a log in Python.",
+          "platform": "shared",
+          "symbol": "code",
+          "htbModule": false
         },
         {
           "id": "htb-assembly",
@@ -130,7 +136,10 @@ window.ROADMAP = {
               "note": "Use the machine-level programming chapters as a book route from C to x86-64."
             }
           ],
-          "goal": "You can trace a short compiled function, identify arguments and return values, and explain its stack frame."
+          "goal": "You can trace a short compiled function, identify arguments and return values, and explain its stack frame.",
+          "platform": "shared",
+          "symbol": "chip",
+          "htbModule": false
         },
         {
           "id": "ost2-arch2001",
@@ -157,7 +166,10 @@ window.ROADMAP = {
               "note": "Free author-hosted chapters on processes, virtual memory, and concurrency offer the broader OS foundation."
             }
           ],
-          "goal": "You can explain virtual versus physical memory and why a user-mode program needs system calls."
+          "goal": "You can explain virtual versus physical memory and why a user-mode program needs system calls.",
+          "platform": "shared",
+          "symbol": "chip",
+          "htbModule": false
         },
         {
           "id": "windows-internals",
@@ -197,7 +209,10 @@ window.ROADMAP = {
               "note": "Start with Part 1 architecture, processes, threads, memory, and security; use Part 2 as a later reference."
             }
           ],
-          "goal": "You can explain a process’s threads, handles, token, loaded modules, and memory layout."
+          "goal": "You can explain a process’s threads, handles, token, loaded modules, and memory layout.",
+          "platform": "windows",
+          "symbol": "windows",
+          "htbModule": false
         },
         {
           "id": "windows-system-programming",
@@ -236,7 +251,10 @@ window.ROADMAP = {
               "type": "book",
               "note": "The author’s book listing links Parts 1 and 2 for a code-focused alternative to the video courses."
             }
-          ]
+          ],
+          "platform": "windows",
+          "symbol": "code",
+          "htbModule": false
         },
         {
           "id": "ost2-dbg1101",
@@ -276,7 +294,10 @@ window.ROADMAP = {
               "note": "Use selected PE, IDA, and analysis labs; older tool screenshots and OS behavior need current references."
             }
           ],
-          "goal": "You can explain a small PE’s imports and sections and follow an interesting function through disassembly."
+          "goal": "You can explain a small PE’s imports and sections and follow an interesting function through disassembly.",
+          "platform": "windows",
+          "symbol": "binary",
+          "htbModule": false
         }
       ]
     },
@@ -324,7 +345,10 @@ window.ROADMAP = {
               "note": "Apply debugging to security analysis in the proposed advanced HTB module."
             }
           ],
-          "goal": "You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory."
+          "goal": "You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory.",
+          "platform": "windows",
+          "symbol": "debugger",
+          "htbModule": true
         },
         {
           "id": "purple-intro",
@@ -345,7 +369,10 @@ window.ROADMAP = {
               "note": "Learn the HTB-specific setup required before its Detection & OpSec range."
             }
           ],
-          "goal": "You can connect to the lab, follow its workflow, and locate the evidence you need."
+          "goal": "You can connect to the lab, follow its workflow, and locate the evidence you need.",
+          "platform": "shared",
+          "symbol": "lab",
+          "htbModule": true
         },
         {
           "id": "detection-range",
@@ -378,7 +405,10 @@ window.ROADMAP = {
               "note": "Optional open-source tests for validating detections in your own authorized lab."
             }
           ],
-          "goal": "You can reproduce a lab action, collect its logs, and check whether a detection sees it."
+          "goal": "You can reproduce a lab action, collect its logs, and check whether a detection sees it.",
+          "platform": "shared",
+          "symbol": "detection",
+          "htbModule": true
         },
         {
           "id": "intro-detection-engineering",
@@ -411,7 +441,10 @@ window.ROADMAP = {
               "note": "Use a focused test to check your hypothesis and retain the resulting evidence."
             }
           ],
-          "goal": "You can document a tested rule, its required telemetry, and likely false positives."
+          "goal": "You can document a tested rule, its required telemetry, and likely false positives.",
+          "platform": "shared",
+          "symbol": "detection",
+          "htbModule": true
         },
         {
           "id": "token-manipulation",
@@ -444,7 +477,10 @@ window.ROADMAP = {
               "note": "Use the security and token lessons if the underlying C++/API behavior needs work."
             }
           ],
-          "goal": "You can explain how a token change affects identity, privileges, and observable behavior."
+          "goal": "You can explain how a token change affects identity, privileges, and observable behavior.",
+          "platform": "windows",
+          "symbol": "identity",
+          "htbModule": true
         },
         {
           "id": "process-injection",
@@ -483,7 +519,10 @@ window.ROADMAP = {
               "note": "A deeper memory-analysis reference; its older tools and OS structures need comparison with current documentation."
             }
           ],
-          "goal": "You can connect an injection technique to API behavior, suspicious memory, and telemetry."
+          "goal": "You can connect an injection technique to API behavior, suspicious memory, and telemetry.",
+          "platform": "windows",
+          "symbol": "memory",
+          "htbModule": true
         },
         {
           "id": "api-monitoring",
@@ -510,7 +549,10 @@ window.ROADMAP = {
               "note": "Study the official API-instrumentation project and its samples alongside your lab results."
             }
           ],
-          "goal": "You can explain what an API hook observes, changes, and misses."
+          "goal": "You can explain what an API hook observes, changes, and misses.",
+          "platform": "windows",
+          "symbol": "trace",
+          "htbModule": true
         },
         {
           "id": "low-level-detectability",
@@ -531,7 +573,10 @@ window.ROADMAP = {
               "note": "Apply assembly, injection, C/C++, and YARA/Sigma foundations in HTB."
             }
           ],
-          "goal": "You can explain which low-level signals support a detection and where visibility can fail."
+          "goal": "You can explain which low-level signals support a detection and where visibility can fail.",
+          "platform": "windows",
+          "symbol": "trace",
+          "htbModule": true
         }
       ]
     },
@@ -572,7 +617,10 @@ window.ROADMAP = {
               "note": "Its COM section provides guided C++ examples of activation, servers, clients, and registration."
             }
           ],
-          "goal": "You can explain COM activation and inspect a WMI namespace, provider, and event subscription."
+          "goal": "You can explain COM activation and inspect a WMI namespace, provider, and event subscription.",
+          "platform": "windows",
+          "symbol": "network",
+          "htbModule": false
         },
         {
           "id": "wmi-tradecraft",
@@ -604,7 +652,10 @@ window.ROADMAP = {
               "note": "Reference filter, consumer, and binding events when checking WMI subscription telemetry."
             }
           ],
-          "goal": "You can trace WMI activity from the underlying mechanism to its detection evidence."
+          "goal": "You can trace WMI activity from the underlying mechanism to its detection evidence.",
+          "platform": "windows",
+          "symbol": "trace",
+          "htbModule": true
         },
         {
           "id": "persistence-tradecraft",
@@ -636,7 +687,10 @@ window.ROADMAP = {
               "note": "Use the registry, services, scheduled-task, and execution-evidence lessons for a forensic perspective."
             }
           ],
-          "goal": "You can explain a persistence mechanism, its artifacts, and a validated detection."
+          "goal": "You can explain a persistence mechanism, its artifacts, and a validated detection.",
+          "platform": "windows",
+          "symbol": "persistence",
+          "htbModule": true
         },
         {
           "id": "windows-privesc-foundation",
@@ -663,7 +717,10 @@ window.ROADMAP = {
               "note": "Reference tokens, access checks, and security boundaries instead of memorizing tool commands."
             }
           ],
-          "goal": "You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context."
+          "goal": "You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.",
+          "platform": "windows",
+          "symbol": "privilege",
+          "htbModule": false
         },
         {
           "id": "privesc-tradecraft",
@@ -684,7 +741,10 @@ window.ROADMAP = {
               "note": "Apply the earlier WinDbg, token, low-level, and privilege-escalation study to detection."
             }
           ],
-          "goal": "You can connect an escalation’s code behavior to the resulting telemetry."
+          "goal": "You can connect an escalation’s code behavior to the resulting telemetry.",
+          "platform": "windows",
+          "symbol": "privilege",
+          "htbModule": true
         },
         {
           "id": "active-directory-foundation",
@@ -717,7 +777,10 @@ window.ROADMAP = {
               "note": "Practice the identity and attack behavior recommended before Credential Access Tradecraft."
             }
           ],
-          "goal": "You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites."
+          "goal": "You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites.",
+          "platform": "windows",
+          "symbol": "identity",
+          "htbModule": false
         },
         {
           "id": "credential-access-tradecraft",
@@ -743,15 +806,18 @@ window.ROADMAP = {
               "note": "Reference source/target process access while reasoning about memory-access detections."
             }
           ],
-          "goal": "You can explain a credential-access behavior, its required access, and useful detection evidence."
+          "goal": "You can explain a credential-access behavior, its required access, and useful detection evidence.",
+          "platform": "windows",
+          "symbol": "identity",
+          "htbModule": true
         }
       ]
     },
     {
-      "id": "kernel-linux",
-      "title": "Kernel & Linux",
+      "id": "windows-kernel",
+      "title": "Windows kernel",
       "eyebrow": "Phase 04",
-      "description": "Apply the same approach to kernel telemetry and Linux process behavior.",
+      "description": "Connect Windows kernel behavior to the telemetry used by detections.",
       "steps": [
         {
           "id": "ost2-arch2821",
@@ -791,7 +857,10 @@ window.ROADMAP = {
               "note": "Use focused chapters to explain the kernel objects and mechanisms you inspect."
             }
           ],
-          "goal": "You can attach to a lab kernel, inspect its state, and explain the objects and execution context relevant to your telemetry."
+          "goal": "You can attach to a lab kernel, inspect its state, and explain the objects and execution context relevant to your telemetry.",
+          "platform": "windows",
+          "symbol": "chip",
+          "htbModule": false
         },
         {
           "id": "kernel-telemetry",
@@ -824,8 +893,19 @@ window.ROADMAP = {
               "note": "Optional paid depth specifically on EDR sensors, kernel callbacks, and detection components; this broader course is not needed for HTB completion."
             }
           ],
-          "goal": "You can explain a kernel telemetry source, its evidence, and its limitations."
-        },
+          "goal": "You can explain a kernel telemetry source, its evidence, and its limitations.",
+          "platform": "windows",
+          "symbol": "trace",
+          "htbModule": true
+        }
+      ]
+    },
+    {
+      "id": "linux-detection",
+      "title": "Linux detection",
+      "eyebrow": "Phase 05",
+      "description": "Follow Linux processes, memory, and system calls into injection analysis and detection.",
+      "steps": [
         {
           "id": "linux-foundations",
           "title": "Linux processes, permissions, and networking",
@@ -857,7 +937,10 @@ window.ROADMAP = {
               "note": "A detailed reference for process creation, permissions, memory, and system calls; selected chapters are enough."
             }
           ],
-          "goal": "You can inspect a Linux process, explain its permissions and open files, and troubleshoot basic connectivity."
+          "goal": "You can inspect a Linux process, explain its permissions and open files, and troubleshoot basic connectivity.",
+          "platform": "linux",
+          "symbol": "linux",
+          "htbModule": false
         },
         {
           "id": "ost2-dbg1012",
@@ -884,7 +967,10 @@ window.ROADMAP = {
               "note": "Use the official manual to look up commands and debug your own small programs."
             }
           ],
-          "goal": "You can break on a function and inspect registers, arguments, stack frames, and memory in GDB."
+          "goal": "You can break on a function and inspect registers, arguments, stack frames, and memory in GDB.",
+          "platform": "linux",
+          "symbol": "debugger",
+          "htbModule": false
         },
         {
           "id": "linux-buffer-overflows",
@@ -911,7 +997,10 @@ window.ROADMAP = {
               "note": "Use the machine-level programming and memory chapters to understand what the debugger shows."
             }
           ],
-          "goal": "You can explain a stack overwrite in a lab and follow the changed control flow in GDB."
+          "goal": "You can explain a stack overwrite in a lab and follow the changed control flow in GDB.",
+          "platform": "linux",
+          "symbol": "memory",
+          "htbModule": false
         },
         {
           "id": "linux-injection",
@@ -943,14 +1032,17 @@ window.ROADMAP = {
               "note": "Return to process, signal, and memory APIs when the Linux execution model is unclear."
             }
           ],
-          "goal": "You can connect Linux injection behavior to process memory and detection evidence."
+          "goal": "You can connect Linux injection behavior to process memory and detection evidence.",
+          "platform": "linux",
+          "symbol": "memory",
+          "htbModule": true
         }
       ]
     },
     {
       "id": "certification",
       "title": "Certification",
-      "eyebrow": "Phase 05",
+      "eyebrow": "Phase 06",
       "description": "Use HTB’s published path and exam guide to confirm eligibility.",
       "steps": [
         {
@@ -981,7 +1073,10 @@ window.ROADMAP = {
               "note": "Check the published certification and its actual eligibility requirements when it appears."
             }
           ],
-          "goal": "HTB shows the official path at 100% and you have met that certification’s published exam and voucher requirements."
+          "goal": "HTB shows the official path at 100% and you have met that certification’s published exam and voucher requirements.",
+          "platform": "shared",
+          "symbol": "certificate",
+          "htbModule": false
         }
       ]
     }

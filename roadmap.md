@@ -1,6 +1,6 @@
 # Road to HTB DE
 
-A topic guide to detection engineering, arranged in a suggested learning order. Browse the subjects you need and choose resources that cover your gaps.
+A topic guide to detection engineering, arranged in a suggested learning order. Browse the subjects you need and choose resources that cover your gaps. Windows and Linux material are labeled by platform; Windows kernel and Linux detection have their own sections.
 
 **Reviewed: October 5, 2026.** Independent preparation guide. HTB announced a Detection Engineering certification, but its final name, syllabus, and exam rules were not verified as of this review. The 12 advanced HTB modules here are preparation targets, not a confirmed exam blueprint. Complete the official certification path and follow its requirements when published.
 
@@ -97,6 +97,8 @@ Understand address spaces, privilege levels, paging, and system calls.
 
 ### Windows internals
 
+Windows
+
 Understand processes, threads, virtual memory, handles, tokens, and the user/kernel boundary.
 
 **In practice:** You can explain a process’s threads, handles, token, loaded modules, and memory layout.
@@ -120,6 +122,8 @@ Understand processes, threads, virtual memory, handles, tokens, and the user/ker
 
 ### Windows API programming
 
+Windows
+
 Read and modify the C/C++ code behind Windows behavior.
 
 **In practice:** You can write a small program that queries a process, uses a DLL, and handles errors and resources correctly.
@@ -141,6 +145,8 @@ Read and modify the C/C++ code behind Windows behavior.
 - [Windows 10 System Programming · Pavel Yosifovich](https://scorpiosoftware.net/books/) — The author’s book listing links Parts 1 and 2 for a code-focused alternative to the video courses.
 
 ### Reverse engineering and PE analysis
+
+Windows
 
 Read PE files and follow a program’s behavior in a disassembler.
 
@@ -166,6 +172,8 @@ Use debugging and telemetry to turn Windows behavior into tested detections.
 
 ### Introduction to Dynamic Analysis with WinDbg
 
+HTB Academy module · Windows
+
 Use WinDbg to connect API calls, call stacks, registers, and memory to behavior.
 
 **In practice:** You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory.
@@ -186,6 +194,8 @@ Use WinDbg to connect API calls, call stacks, registers, and memory to behavior.
 
 ### Purple lab workflow
 
+HTB Academy module
+
 Learn the environment and workflow used by the purple-team labs.
 
 **In practice:** You can connect to the lab, follow its workflow, and locate the evidence you need.
@@ -198,6 +208,8 @@ Learn the environment and workflow used by the purple-team labs.
 - [HTB · Intro to Academy’s Purple Modules](https://academy.hackthebox.com/course/preview/intro-to-academys-purple-modules) — Learn the HTB-specific setup required before its Detection & OpSec range.
 
 ### Telemetry and detection validation lab
+
+HTB Academy module
 
 Practice logging, evidence collection, and detection validation in the range.
 
@@ -217,6 +229,8 @@ Practice logging, evidence collection, and detection validation in the range.
 
 ### Introduction to Detection Engineering
 
+HTB Academy module
+
 Turn a behavior into telemetry, a detection hypothesis, a rule, and a validated result.
 
 **In practice:** You can document a tested rule, its required telemetry, and likely false positives.
@@ -235,6 +249,8 @@ Turn a behavior into telemetry, a detection hypothesis, a rule, and a validated 
 
 ### Detecting Access Token Manipulation Attacks
 
+HTB Academy module · Windows
+
 Understand tokens, privileges, and impersonation as detection opportunities.
 
 **In practice:** You can explain how a token change affects identity, privileges, and observable behavior.
@@ -252,6 +268,8 @@ Understand tokens, privileges, and impersonation as detection opportunities.
 - [TrainSec · Windows System Programming 3](https://trainsec.net/courses/windows-system-programming-3/) — Use the security and token lessons if the underlying C++/API behavior needs work.
 
 ### Process Injection Attacks and Detection
+
+HTB Academy module · Windows
 
 Connect injection behavior to Windows APIs, memory, and detection evidence.
 
@@ -275,6 +293,8 @@ Connect injection behavior to Windows APIs, memory, and detection evidence.
 
 ### Windows API Monitoring and Hooking
 
+HTB Academy module · Windows
+
 Explore what API monitoring can reveal about Windows execution.
 
 **In practice:** You can explain what an API hook observes, changes, and misses.
@@ -292,6 +312,8 @@ Explore what API monitoring can reveal about Windows execution.
 
 ### Windows Low Level Detectability
 
+HTB Academy module · Windows
+
 Deepen your understanding of low-level behavior and detection coverage.
 
 **In practice:** You can explain which low-level signals support a detection and where visibility can fail.
@@ -308,6 +330,8 @@ Deepen your understanding of low-level behavior and detection coverage.
 Use stronger debugging and Windows platform knowledge to analyze persistence, escalation, and credential access.
 
 ### COM and WMI fundamentals
+
+Windows
 
 Learn the Windows components behind WMI and persistence tradecraft.
 
@@ -327,6 +351,8 @@ Learn the Windows components behind WMI and persistence tradecraft.
 
 ### WMI Tradecraft Analysis
 
+HTB Academy module · Windows
+
 Analyze WMI behavior using Windows internals and telemetry.
 
 **In practice:** You can trace WMI activity from the underlying mechanism to its detection evidence.
@@ -343,6 +369,8 @@ Analyze WMI behavior using Windows internals and telemetry.
 - [HTB · WMI Tradecraft Analysis](https://academy.hackthebox.com/course/preview/wmi-tradecraft-analysis) — Analyze WMI behavior with COM, Windows internals, PowerShell, and Splunk foundations.
 
 ### Persistence Tradecraft Analysis
+
+HTB Academy module · Windows
 
 Investigate persistence mechanisms and develop evidence-based detections.
 
@@ -361,6 +389,8 @@ Investigate persistence mechanisms and develop evidence-based detections.
 
 ### Windows privilege-escalation fundamentals
 
+Windows
+
 Fill privilege-escalation knowledge gaps before the detection-focused tradecraft module.
 
 **In practice:** You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.
@@ -378,6 +408,8 @@ Fill privilege-escalation knowledge gaps before the detection-focused tradecraft
 
 ### Privilege Escalation Tradecraft Analysis
 
+HTB Academy module · Windows
+
 Connect escalation techniques to debugger evidence and detection logic.
 
 **In practice:** You can connect an escalation’s code behavior to the resulting telemetry.
@@ -390,6 +422,8 @@ Connect escalation techniques to debugger evidence and detection logic.
 - [HTB · Privilege Escalation Tradecraft Analysis](https://academy.hackthebox.com/course/preview/privilege-escalation-tradecraft-analysis) — Apply the earlier WinDbg, token, low-level, and privilege-escalation study to detection.
 
 ### Active Directory fundamentals and attacks
+
+Windows
 
 Understand the identity environment and attack behavior behind credential-access detections.
 
@@ -409,6 +443,8 @@ Understand the identity environment and attack behavior behind credential-access
 
 ### Credential Access Tradecraft Analysis
 
+HTB Academy module · Windows
+
 Analyze credential-access behavior and turn the evidence into detections.
 
 **In practice:** You can explain a credential-access behavior, its required access, and useful detection evidence.
@@ -423,11 +459,13 @@ Analyze credential-access behavior and turn the evidence into detections.
 
 - [HTB · Credential Access Tradecraft Analysis](https://academy.hackthebox.com/course/preview/credential-access-tradecraft-analysis) — Apply AD, WinDbg, C/C++, Win32, and Splunk foundations to the proposed HTB module.
 
-## 4. Kernel & Linux
+## 4. Windows kernel
 
-Apply the same approach to kernel telemetry and Linux process behavior.
+Connect Windows kernel behavior to the telemetry used by detections.
 
 ### Kernel internals and debugging (optional depth)
+
+Windows
 
 Close kernel-memory and debugger gaps before working with kernel telemetry.
 
@@ -449,6 +487,8 @@ Close kernel-memory and debugger gaps before working with kernel telemetry.
 
 ### Windows Kernel Telemetry & Detection Techniques
 
+HTB Academy module · Windows
+
 Build detections with a deeper understanding of kernel-level telemetry.
 
 **In practice:** You can explain a kernel telemetry source, its evidence, and its limitations.
@@ -465,7 +505,13 @@ Build detections with a deeper understanding of kernel-level telemetry.
 - [HTB · Windows Kernel Telemetry & Detection Techniques](https://academy.hackthebox.com/course/preview/windows-kernel-telemetry--detection-techniques) — Apply injection, WinDbg, assembly, C/C++, and Windows internals to detection telemetry.
 - [TrainSec · EDR Internals: Research & Development](https://trainsec.net/courses/edr-internals-research-development/) — Optional paid depth specifically on EDR sensors, kernel callbacks, and detection components; this broader course is not needed for HTB completion.
 
+## 5. Linux detection
+
+Follow Linux processes, memory, and system calls into injection analysis and detection.
+
 ### Linux processes, permissions, and networking
+
+Linux
 
 Confirm the platform basics before Linux debugging and injection.
 
@@ -485,6 +531,8 @@ Confirm the platform basics before Linux debugging and injection.
 
 ### Linux debugging with GDB
 
+Linux
+
 Strengthen GDB before Linux buffer-overflow and injection work.
 
 **In practice:** You can break on a function and inspect registers, arguments, stack frames, and memory in GDB.
@@ -498,6 +546,8 @@ Strengthen GDB before Linux buffer-overflow and injection work.
 - [GNU · GDB manual](https://sourceware.org/gdb/current/onlinedocs/gdb.html/) — Use the official manual to look up commands and debug your own small programs.
 
 ### Linux stack memory and buffer overflows
+
+Linux
 
 Build the Linux memory and debugger background specifically recommended for injection study.
 
@@ -515,6 +565,8 @@ Build the Linux memory and debugger background specifically recommended for inje
 - [Computer Systems: A Programmer’s Perspective](https://csapp.cs.cmu.edu/) — Use the machine-level programming and memory chapters to understand what the debugger shows.
 
 ### Linux Process Injections & Detections
+
+HTB Academy module · Linux
 
 Apply Linux execution and memory knowledge to injection analysis and detection.
 
@@ -534,7 +586,7 @@ Apply Linux execution and memory knowledge to injection analysis and detection.
 
 - [The Linux Programming Interface](https://nostarch.com/tlpi) — Return to process, signal, and memory APIs when the Linux execution model is unclear.
 
-## 5. Certification
+## 6. Certification
 
 Use HTB’s published path and exam guide to confirm eligibility.
 
