@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0b0b">
-  <meta name="description" content="Road to HTB DE. A simple, independent Detection Engineering roadmap: foundations, OST2, Windows internals, and 12 advanced HTB modules.">
+  <meta name="description" content="Road to HTB DE. A simple Detection Engineering roadmap organized by skill, with relevant free courses, paid training, and books under each topic.">
   <meta property="og:title" content="Road to HTB DE">
-  <meta property="og:description" content="A simple Detection Engineering study path. 12 HTB modules, integrated OST2, and progress saved in your browser.">
+  <meta property="og:description" content="A simple Detection Engineering study path. One roadmap by skill. Free courses, paid training, and books in the right place.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thefinalflex.github.io/road-to-detection-engineering/">
   <link rel="canonical" href="https://thefinalflex.github.io/road-to-detection-engineering/">
   <title>Road to HTB DE</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2">
-  <script defer src="data.js?v=2"></script>
-  <script defer src="app.js?v=2"></script>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script defer src="data.js?v=3"></script>
+  <script defer src="app.js?v=3"></script>
 </head>
 <body>
   <a class="skip-link" href="#roadmap">Skip to roadmap</a>
@@ -27,19 +27,19 @@
       <details class="roadmap-note"><summary>Unofficial prep path · checked October 5, 2026</summary><p>HTB announced a Detection Engineering certification, but its final name, syllabus, and exam rules were not verified as of this review. These 12 advanced modules are preparation targets. Follow HTB’s official path when it launches. <a href="https://www.hackthebox.com/blog/htb-new-platform-capabilities-defensive-security" target="_blank" rel="noopener noreferrer">Read the announcement ↗</a></p></details>
     </header>
     <section class="progress-section" aria-label="Your progress">
-      <div class="progress-line"><span><strong id="core-complete">0</strong> / 12 HTB modules</span><span id="all-complete">0 / 33 study steps done</span><span id="progress-percent">0%</span></div>
-      <div class="progress-track" id="progress-track" role="progressbar" aria-label="Advanced module progress" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><div id="progress-fill"></div></div>
+      <div class="progress-line"><span id="all-complete">0 topics completed</span><span class="progress-description">One skill at a time.</span><span id="progress-percent">0%</span></div>
+      <div class="progress-track" id="progress-track" role="progressbar" aria-label="Roadmap topic progress" aria-valuemin="0" aria-valuemax="29" aria-valuenow="0"><div id="progress-fill"></div></div>
       <div class="utility-line"><button id="resume-button">Next unfinished step →</button><div class="utility-actions"><button id="share-button">Copy link</button><details class="progress-menu"><summary>Save / reset</summary><div class="menu-content"><button id="export-progress">Export progress</button><button id="import-button">Import progress</button><input type="file" id="import-progress" accept="application/json,.json" hidden><button id="reset-progress">Reset progress</button></div></details></div></div>
     </section>
     <nav class="phase-nav" id="phase-nav" aria-label="Learning phases"></nav>
     <section id="roadmap" aria-label="Study roadmap">
-      <div class="roadmap-controls"><div class="filters" role="group" aria-label="Filter roadmap"><button class="filter active" data-filter="all" aria-pressed="true">All</button><button class="filter" data-filter="target" aria-pressed="false">HTB core</button><button class="filter" data-filter="OST2" aria-pressed="false">OST2</button></div><label class="search-box"><span class="sr-only">Search courses and skills</span><input id="search" type="search" placeholder="Search the roadmap…" autocomplete="off"></label></div>
-      <p class="checklist-hint">Go in order. Skip foundations you know. Open a step for resources.</p>
+      <div class="roadmap-controls"><button class="expand-resources" id="expand-resources" aria-pressed="false">Expand resources +</button><label class="search-box"><span class="sr-only">Search courses and skills</span><input id="search" type="search" placeholder="Search the roadmap…" autocomplete="off"></label></div>
+      <p class="checklist-hint">Learn the topic. Choose the resources that suit you. You don’t need to finish every option.</p>
       <div id="roadmap-content"></div>
       <p class="empty-state" id="empty-state" hidden>No matching steps. Try another skill or clear your search.</p>
       <noscript><p>Enable JavaScript for the checklist, or <a href="roadmap.md">read the Markdown roadmap</a>.</p></noscript>
     </section>
-    <footer class="page-footer"><p class="local-note">Progress saves in this browser. Export it to move devices.</p><div><a href="https://github.com/theFinalFlex/road-to-detection-engineering" target="_blank" rel="noopener noreferrer">GitHub ↗</a><span>Independent. Not affiliated with HTB or OST2.</span></div><p class="art-credit">BLAME! artwork by Tsutomu Nihei · <a href="https://www.pinterest.com/pin/59180182590489000/" target="_blank" rel="noopener noreferrer">image source ↗</a></p></footer>
+    <footer class="page-footer"><p class="local-note">Progress saves in this browser. Export it to move devices.</p><div><a href="https://github.com/theFinalFlex/road-to-detection-engineering" target="_blank" rel="noopener noreferrer">GitHub ↗</a><span>Independent. Not affiliated with the training providers.</span></div><p class="art-credit">BLAME! artwork by Tsutomu Nihei · <a href="https://www.pinterest.com/pin/59180182590489000/" target="_blank" rel="noopener noreferrer">image source ↗</a></p></footer>
   </main>
   <div id="toast" role="status" aria-live="polite"></div>
   <dialog id="reset-dialog"><form method="dialog"><h2>Reset progress?</h2><p>This clears your checkmarks in this browser. Export a backup first if you want to keep them.</p><div class="dialog-actions"><button value="cancel">Keep progress</button><button value="reset">Reset progress</button></div></form></dialog>
