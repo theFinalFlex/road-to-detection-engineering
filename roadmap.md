@@ -1,12 +1,12 @@
 # Road to HTB DE
 
-One roadmap organized by what you need to learn. Pick resources that cover your gaps; you do not need to finish every option. Check off a topic when you can meet its practical goal.
+A topic guide to detection engineering, arranged in a suggested learning order. Browse the subjects you need and choose resources that cover your gaps.
 
 **Reviewed: October 5, 2026.** Independent preparation guide. HTB announced a Detection Engineering certification, but its final name, syllabus, and exam rules were not verified as of this review. The 12 advanced HTB modules here are preparation targets, not a confirmed exam blueprint. Complete the official certification path and follow its requirements when published.
 
-[Interactive roadmap](https://thefinalflex.github.io/road-to-detection-engineering/) · [HTB announcement](https://www.hackthebox.com/blog/htb-new-platform-capabilities-defensive-security)
+[Interactive wiki](https://thefinalflex.github.io/road-to-detection-engineering/) · [HTB announcement](https://www.hackthebox.com/blog/htb-new-platform-capabilities-defensive-security)
 
-Free courses, paid courses, and books are grouped under the topic they support. A reference may cover only part of a topic; the note explains its use. Skip material you already know unless the official path requires its completion.
+Free courses, paid courses, and books are grouped under the topic they support. A reference may cover only part of a topic; the note explains its use. You do not need to finish every resource.
 
 ## 1. Foundations
 
@@ -16,7 +16,7 @@ Learn the skill, choose the resource that suits you, and skip foundations you ca
 
 Read Windows evidence, query a SIEM, and explain why a detection fired.
 
-- [ ] **Ready to move on:** You can investigate a Windows alert, write a basic rule, test a benign case, and explain your evidence.
+**In practice:** You can investigate a Windows alert, write a basic rule, test a benign case, and explain your evidence.
 
 - Cover Windows event logs, Splunk, basic malware analysis, YARA/Sigma, investigation, and reporting; fill gaps instead of repeating mastered study.
 - 13Cubed fits endpoint evidence and forensic interpretation; add separate SIEM and rule-writing practice.
@@ -36,7 +36,7 @@ Read Windows evidence, query a SIEM, and explain why a detection fired.
 
 Read, modify, compile, and debug small programs before tackling low-level Windows examples.
 
-- [ ] **Ready to move on:** You can compile and debug a small C program with pointers and structs, read basic C++, and parse a log in Python.
+**In practice:** You can compile and debug a small C program with pointers and structs, read basic C++, and parse a log in Python.
 
 - C: pointers, structs, arrays, allocation, function pointers, compilation, and linking.
 - C++: references, object lifetime, basic classes, and reading Windows examples; Python: files, parsing, and small analysis scripts.
@@ -60,7 +60,7 @@ Read, modify, compile, and debug small programs before tackling low-level Window
 
 Connect C source to registers, memory, stack frames, and function calls.
 
-- [ ] **Ready to move on:** You can trace a short compiled function, identify arguments and return values, and explain its stack frame.
+**In practice:** You can trace a short compiled function, identify arguments and return values, and explain its stack frame.
 
 - Choose OST2, HTB, or the book as your main assembly resource; use the others to close gaps.
 - Learn Windows x64 argument passing and stack conventions as well as the Linux examples used by many introductory resources.
@@ -82,7 +82,7 @@ Connect C source to registers, memory, stack frames, and function calls.
 
 Understand address spaces, privilege levels, paging, and system calls.
 
-- [ ] **Ready to move on:** You can explain virtual versus physical memory and why a user-mode program needs system calls.
+**In practice:** You can explain virtual versus physical memory and why a user-mode program needs system calls.
 
 - Study the ideas needed to explain a process and a user/kernel transition; save the deeper hardware labs for the kernel stage if necessary.
 - Full completion of either resource is optional and should not delay ordinary Windows user-mode work.
@@ -99,7 +99,7 @@ Understand address spaces, privilege levels, paging, and system calls.
 
 Understand processes, threads, virtual memory, handles, tokens, and the user/kernel boundary.
 
-- [ ] **Ready to move on:** You can explain a process’s threads, handles, token, loaded modules, and memory layout.
+**In practice:** You can explain a process’s threads, handles, token, loaded modules, and memory layout.
 
 - Inspect real processes and memory while studying the concepts.
 - Choose the free documentation route, a TrainSec course, or selected Windows Internals chapters; you do not need to complete all three.
@@ -122,7 +122,7 @@ Understand processes, threads, virtual memory, handles, tokens, and the user/ker
 
 Read and modify the C/C++ code behind Windows behavior.
 
-- [ ] **Ready to move on:** You can write a small program that queries a process, uses a DLL, and handles errors and resources correctly.
+**In practice:** You can write a small program that queries a process, uses a DLL, and handles errors and resources correctly.
 
 - Practice handles, process/thread APIs, memory allocation, DLL loading, errors, and cleanup.
 - Focus on the Win32/Native API boundary and relevant examples; a complete Windows application-development curriculum is unnecessary.
@@ -144,7 +144,7 @@ Read and modify the C/C++ code behind Windows behavior.
 
 Read PE files and follow a program’s behavior in a disassembler.
 
-- [ ] **Ready to move on:** You can explain a small PE’s imports and sections and follow an interesting function through disassembly.
+**In practice:** You can explain a small PE’s imports and sections and follow an interesting function through disassembly.
 
 - Cover PE headers, sections, imports, relocations, strings, functions, and cross-references.
 - Keep basic IDA familiarity for HTB labs that expect it; Ghidra is an additional tool choice.
@@ -168,7 +168,7 @@ Use debugging and telemetry to turn Windows behavior into tested detections.
 
 Use WinDbg to connect API calls, call stacks, registers, and memory to behavior.
 
-- [ ] **Ready to move on:** You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory.
+**In practice:** You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory.
 
 - If new to WinDbg, start with OST2 Dbg1011 or Microsoft’s introduction, then apply the skills in the HTB module.
 - Use Dbg2011 when kernel-debugging gaps appear; completing an OST2 course does not complete this HTB module.
@@ -188,7 +188,7 @@ Use WinDbg to connect API calls, call stacks, registers, and memory to behavior.
 
 Learn the environment and workflow used by the purple-team labs.
 
-- [ ] **Ready to move on:** You can connect to the lab, follow its workflow, and locate the evidence you need.
+**In practice:** You can connect to the lab, follow its workflow, and locate the evidence you need.
 
 - This is an explicit prerequisite for the Detection & OpSec Cyber Range.
 - It is recommended preparation for Introduction to Detection Engineering; its inclusion in the future certification path is unconfirmed.
@@ -201,7 +201,7 @@ Learn the environment and workflow used by the purple-team labs.
 
 Practice logging, evidence collection, and detection validation in the range.
 
-- [ ] **Ready to move on:** You can reproduce a lab action, collect its logs, and check whether a detection sees it.
+**In practice:** You can reproduce a lab action, collect its logs, and check whether a detection sees it.
 
 - Complete the Purple introduction first.
 - Recommended preparation for Introduction to Detection Engineering, not a confirmed eligibility requirement for the upcoming certification.
@@ -219,7 +219,7 @@ Practice logging, evidence collection, and detection validation in the range.
 
 Turn a behavior into telemetry, a detection hypothesis, a rule, and a validated result.
 
-- [ ] **Ready to move on:** You can complete the module and document a tested rule, its required telemetry, and likely false positives.
+**In practice:** You can document a tested rule, its required telemetry, and likely false positives.
 
 - Bring Python, basic C/C++, YARA/Sigma, malware analysis, Windows logs, and Splunk skills.
 - Test both malicious and benign activity, tune false positives, and document evidence and limitations.
@@ -237,7 +237,7 @@ Turn a behavior into telemetry, a detection hypothesis, a rule, and a validated 
 
 Understand tokens, privileges, and impersonation as detection opportunities.
 
-- [ ] **Ready to move on:** You can complete the module and explain how a token change affects identity, privileges, and observable behavior.
+**In practice:** You can explain how a token change affects identity, privileges, and observable behavior.
 
 - Build on Windows command-line skills, malware analysis, assembly, C, and basic debugging.
 - Carry token and privilege knowledge into later tradecraft analysis.
@@ -255,7 +255,7 @@ Understand tokens, privileges, and impersonation as detection opportunities.
 
 Connect injection behavior to Windows APIs, memory, and detection evidence.
 
-- [ ] **Ready to move on:** You can complete the module and connect an injection technique to API behavior, suspicious memory, and telemetry.
+**In practice:** You can connect an injection technique to API behavior, suspicious memory, and telemetry.
 
 - Apply C structs, assembly, PE structures, processes/threads, Win32/Native APIs, and debugger familiarity.
 - 13Cubed adds the memory-forensics view of injection; it complements live analysis and does not replace HTB path credit.
@@ -277,7 +277,7 @@ Connect injection behavior to Windows APIs, memory, and detection evidence.
 
 Explore what API monitoring can reveal about Windows execution.
 
-- [ ] **Ready to move on:** You can complete the module and explain what an API hook observes, changes, and misses.
+**In practice:** You can explain what an API hook observes, changes, and misses.
 
 - Process Injection is explicitly recommended background.
 - Bring assembly, C/C++ pointers and structs, Splunk log analysis, and Windows attack detection knowledge.
@@ -294,7 +294,7 @@ Explore what API monitoring can reveal about Windows execution.
 
 Deepen your understanding of low-level behavior and detection coverage.
 
-- [ ] **Ready to move on:** You can complete the module and explain which low-level signals support a detection and where visibility can fail.
+**In practice:** You can explain which low-level signals support a detection and where visibility can fail.
 
 - Build on assembly, YARA/Sigma, Process Injection, and C/C++.
 - API Monitoring first is a useful learning sequence, but is not an explicitly listed prerequisite.
@@ -311,7 +311,7 @@ Use stronger debugging and Windows platform knowledge to analyze persistence, es
 
 Learn the Windows components behind WMI and persistence tradecraft.
 
-- [ ] **Ready to move on:** You can explain COM activation and inspect a WMI namespace, provider, and event subscription.
+**In practice:** You can explain COM activation and inspect a WMI namespace, provider, and event subscription.
 
 - Cover interfaces, CLSIDs/IIDs, activation, registration, namespaces, providers, and event subscriptions.
 - Use focused reference reading and inspect examples in a lab.
@@ -329,7 +329,7 @@ Learn the Windows components behind WMI and persistence tradecraft.
 
 Analyze WMI behavior using Windows internals and telemetry.
 
-- [ ] **Ready to move on:** You can complete the module and trace WMI activity from the underlying mechanism to its detection evidence.
+**In practice:** You can trace WMI activity from the underlying mechanism to its detection evidence.
 
 - Bring COM, services, auditing, PowerShell, C++, ATT&CK, and Splunk knowledge.
 
@@ -346,7 +346,7 @@ Analyze WMI behavior using Windows internals and telemetry.
 
 Investigate persistence mechanisms and develop evidence-based detections.
 
-- [ ] **Ready to move on:** You can complete the module and explain a persistence mechanism, its artifacts, and a validated detection.
+**In practice:** You can explain a persistence mechanism, its artifacts, and a validated detection.
 
 - Apply Low Level Detectability, COM, Win32, C/C++, basic reversing/IDA, and Splunk foundations.
 
@@ -363,7 +363,7 @@ Investigate persistence mechanisms and develop evidence-based detections.
 
 Fill privilege-escalation knowledge gaps before the detection-focused tradecraft module.
 
-- [ ] **Ready to move on:** You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.
+**In practice:** You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.
 
 - Complete or review the module if the underlying techniques are unfamiliar.
 - If you already have equivalent practical knowledge, avoid repeating it solely for this proposed prep sequence.
@@ -380,7 +380,7 @@ Fill privilege-escalation knowledge gaps before the detection-focused tradecraft
 
 Connect escalation techniques to debugger evidence and detection logic.
 
-- [ ] **Ready to move on:** You can complete the module and connect an escalation’s code behavior to the resulting telemetry.
+**In practice:** You can connect an escalation’s code behavior to the resulting telemetry.
 
 - WinDbg, token detection, Low Level Detectability, and privilege-escalation foundations are covered earlier.
 - Use your COM, Win32, basic IDA, C/C++, and Splunk skills during analysis.
@@ -393,7 +393,7 @@ Connect escalation techniques to debugger evidence and detection logic.
 
 Understand the identity environment and attack behavior behind credential-access detections.
 
-- [ ] **Ready to move on:** You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites.
+**In practice:** You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites.
 
 - Fill AD fundamentals if needed, then complete or review Active Directory Enumeration & Attacks.
 - You do not need to earn CPTS or CAPE for this preparation step.
@@ -411,7 +411,7 @@ Understand the identity environment and attack behavior behind credential-access
 
 Analyze credential-access behavior and turn the evidence into detections.
 
-- [ ] **Ready to move on:** You can complete the module and explain a credential-access behavior, its required access, and useful detection evidence.
+**In practice:** You can explain a credential-access behavior, its required access, and useful detection evidence.
 
 - Build on WinDbg, AD Enumeration & Attacks, Windows attack detection with Splunk, Python, C/C++, Win32, basic IDA, and COM.
 
@@ -431,7 +431,7 @@ Apply the same approach to kernel telemetry and Linux process behavior.
 
 Close kernel-memory and debugger gaps before working with kernel telemetry.
 
-- [ ] **Ready to move on:** You can attach to a lab kernel, inspect its state, and explain the objects and execution context relevant to your telemetry.
+**In practice:** You can attach to a lab kernel, inspect its state, and explain the objects and execution context relevant to your telemetry.
 
 - Use the earlier WinDbg foundation, then Dbg2011 if needed, Dbg3011 for the environment, and Arch2821 for deeper kernel concepts.
 - Focus on objects, memory, IRQL, synchronization, and inspecting the kernel; a full driver-development course is not a prerequisite.
@@ -451,7 +451,7 @@ Close kernel-memory and debugger gaps before working with kernel telemetry.
 
 Build detections with a deeper understanding of kernel-level telemetry.
 
-- [ ] **Ready to move on:** You can complete the module and explain a kernel telemetry source, its evidence, and its limitations.
+**In practice:** You can explain a kernel telemetry source, its evidence, and its limitations.
 
 - Bring Process Injection, WinDbg, assembly, C/C++, and Windows API/process/thread/PE knowledge.
 - Its late placement manages difficulty; it does not formally require every preceding tradecraft module.
@@ -469,7 +469,7 @@ Build detections with a deeper understanding of kernel-level telemetry.
 
 Confirm the platform basics before Linux debugging and injection.
 
-- [ ] **Ready to move on:** You can inspect a Linux process, explain its permissions and open files, and troubleshoot basic connectivity.
+**In practice:** You can inspect a Linux process, explain its permissions and open files, and troubleshoot basic connectivity.
 
 - Be comfortable with the shell, processes, permissions, files, and networking fundamentals.
 - Skip repeat modules when these skills are already solid.
@@ -487,7 +487,7 @@ Confirm the platform basics before Linux debugging and injection.
 
 Strengthen GDB before Linux buffer-overflow and injection work.
 
-- [ ] **Ready to move on:** You can break on a function and inspect registers, arguments, stack frames, and memory in GDB.
+**In practice:** You can break on a function and inspect registers, arguments, stack frames, and memory in GDB.
 
 - Expects C and assembly knowledge.
 - Use this if you need practice inspecting memory, registers, stack frames, and execution.
@@ -501,7 +501,7 @@ Strengthen GDB before Linux buffer-overflow and injection work.
 
 Build the Linux memory and debugger background specifically recommended for injection study.
 
-- [ ] **Ready to move on:** You can explain a stack overwrite in a lab and follow the changed control flow in GDB.
+**In practice:** You can explain a stack overwrite in a lab and follow the changed control flow in GDB.
 
 - The entire binary-exploitation path and Windows buffer-overflow module are not needed for this branch.
 - Apply Linux, networking, assembly, C, and GDB foundations in the module’s labs.
@@ -518,7 +518,7 @@ Build the Linux memory and debugger background specifically recommended for inje
 
 Apply Linux execution and memory knowledge to injection analysis and detection.
 
-- [ ] **Ready to move on:** You can complete the module and connect Linux injection behavior to process memory and detection evidence.
+**In practice:** You can connect Linux injection behavior to process memory and detection evidence.
 
 - Bring Python, C structs, Linux fundamentals, assembly, Linux buffer overflows, GDB, YARA/Sigma, and Splunk skills.
 
@@ -536,13 +536,13 @@ Apply Linux execution and memory knowledge to injection analysis and detection.
 
 ## 5. Certification
 
-When the official path is published, it becomes the checklist for exam eligibility.
+Use HTB’s published path and exam guide to confirm eligibility.
 
-### Complete the official path and exam requirements
+### Certification requirements
 
 Reconcile this preparation with HTB’s published syllabus before booking the exam.
 
-- [ ] **Ready to move on:** HTB shows the official path at 100% and you have met that certification’s published exam and voucher requirements.
+**In practice:** HTB shows the official path at 100% and you have met that certification’s published exam and voucher requirements.
 
 - HTB announced a Detection Engineering certification, but its final certification name and syllabus have not been verified. No matching path or certification was listed when checked on October 5, 2026.
 - The June announcement targeted Q3 2026. That target has passed; this roadmap does not claim a confirmed release date.
@@ -558,6 +558,6 @@ Reconcile this preparation with HTB’s published syllabus before booking the ex
 ## Keep the scope focused
 
 - External courses and books support knowledge; they do not replace required HTB path completion.
-- Do not buy every course or read every book. Choose the sections that help you meet the topic goal.
+- Choose the sections that help you understand the topic. There is no need to buy every course or read every book.
 - Separate certifications, full driver-development curricula, and Secure Coding 101: JavaScript are not added to this proposed preparation plan.
 - Build and test detections throughout. Keep the telemetry, rule, validation results, false positives, and a short explanation of your evidence.
