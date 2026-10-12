@@ -1,29 +1,18 @@
-# Road to HTB DE
+# Road to HTB CDEP
 
-**Live site:** https://thefinalflex.github.io/road-to-detection-engineering/
+A DE&TH DIARIES guide to HTB Certified Detection Engineering Principal.
 
-A simple topic wiki for detection engineering, arranged in a suggested learning order. Open any of the 29 topics across six sections for notes, relevant free resources, paid courses, and books. The 12 proposed advanced HTB preparation modules sit alongside the foundations they use.
+- [Blog](https://deathdiaries.com/blogs/road-to-htb-cdep/)
+- [GitHub Pages](https://thefinalflex.github.io/road-to-detection-engineering/)
 
-This is an independent guide, not an official HTB syllabus. The certification's final name, path, and exam requirements were not verified as of October 5, 2026. The official certification path takes precedence when published.
+The guide distinguishes the 13-module official path order from a suggested study sequence. Core foundations come first; targeted preparation sits beside the modules that use it. Extra help and deeper study is optional. External courses and CDSA are not certification eligibility requirements.
 
-The page uses native expandable sections, simple typography, generous spacing, and a minimal black-and-white layout. There are no accounts, analytics, or progress tracking. Windows and Linux retain separate sections; platform and provider details appear inside the expanded topics. A Markdown version is available for sharing. An architectural image and a standalone BLAME! reaction panel are credited to Tsutomu Nihei with their sources linked on the page; the images are not included in the repository.
+Verified October 12, 2026 against the official Academy path, certification page, and help articles linked in the guide. Eligibility requires 100% relevant path completion and a valid voucher; CDEP has a 10-day exam window. The published 75 study days means 600 hours, not calendar days.
 
-## Run locally
+## Content and preview
 
-Open `index.html` directly, or serve this directory with any static web server:
+Edit `data.js`, then run `node generate-markdown.cjs` to update `roadmap.md`. Preserve topic IDs for existing links. The page is static: serve this folder with `python3 -m http.server 8000`. No package installation or build is needed. GitHub Pages publishes `main` from the repository root.
 
-```sh
-python3 -m http.server 8000
-```
+The deathdiaries.com blog uses the same content and assets, with its own canonical URL. Sync the page files there after content updates.
 
-There is no build step or package installation.
-
-## Publish with GitHub Pages
-
-In repository **Settings → Pages**, select **Deploy from a branch**, then **main / (root)**. The `.nojekyll` file keeps the static assets unchanged. All asset paths are relative, so project Pages URLs work.
-
-## Update the content
-
-Edit `data.js` for topic content and resource links. Each topic has a practical `goal`; each resource has `label`, `url`, `type` (`free`, `paid`, or `book`), and a short `note` explaining its use. The `platform` and `htbModule` fields provide context inside expanded topics. IDs identify topic anchors. Keep `roadmap.md` and the visible review date aligned with substantive content updates. Update release-status statements when HTB publishes authoritative information. Updates are manual; the site does not monitor HTB automatically.
-
-Training resources open on the providers' websites and may require their own accounts or subscriptions. The website does not contain copied lesson content, lab answers, or course solutions. Provider names identify the linked resources. This project is not affiliated with or endorsed by the training providers.
+The minimalist page uses native expandable topics, the original DE&TH wordmark, Oxanium headings, restrained pink/gold accents, and credited BLAME! architecture and reaction artwork. It has no accounts, analytics, or progress tracking. Training links open on provider sites; course content and answers are not copied.

@@ -1,11 +1,9 @@
 window.ROADMAP = {
-  "updated": "2026-10-05",
+  "updated": "2026-10-12",
   "phases": [
     {
       "id": "foundations",
-      "title": "Foundations",
-      "eyebrow": "Phase 01",
-      "description": "Learn the skill, choose the resource that suits you, and skip foundations you can already apply.",
+      "title": "Before CDEP",
       "steps": [
         {
           "id": "soc-foundations",
@@ -15,17 +13,10 @@ window.ROADMAP = {
           "target": false,
           "summary": "Read Windows evidence, query a SIEM, and explain why a detection fired.",
           "details": [
-            "Cover Windows event logs, Splunk, basic malware analysis, YARA/Sigma, investigation, and reporting; fill gaps instead of repeating mastered study.",
-            "13Cubed fits endpoint evidence and forensic interpretation; add separate SIEM and rule-writing practice.",
-            "CDSA is useful preparation, but passing that separate exam is not a verified requirement for the upcoming certificate."
+            "HTB considers SOC Analyst path knowledge prerequisite background: Windows logs, Splunk, malware analysis, YARA/Sigma, investigation, and reporting. Review only your gaps.",
+            "Passing CDSA is not required for CDEP eligibility."
           ],
           "resources": [
-            {
-              "label": "13Cubed · free videos",
-              "url": "https://www.youtube.com/@13Cubed",
-              "type": "free",
-              "note": "Choose individual Windows forensics episodes to understand the artifacts behind an alert."
-            },
             {
               "label": "Sigma documentation",
               "url": "https://sigmahq.io/docs/",
@@ -37,17 +28,12 @@ window.ROADMAP = {
               "url": "https://academy.hackthebox.com/path/preview/soc-analyst",
               "type": "paid",
               "note": "Structured lab route covering investigation, SIEM, malware, and detection foundations."
-            },
-            {
-              "label": "13Cubed · Investigating Windows Endpoints",
-              "url": "https://training.13cubed.com/investigating-windows-endpoints",
-              "type": "paid",
-              "note": "Paid depth on event logs, registry, execution evidence, and disk artifacts; it does not cover memory forensics."
             }
           ],
           "goal": "You can investigate a Windows alert, write a basic rule, test a benign case, and explain your evidence.",
           "platform": "shared",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Recommended background"
         },
         {
           "id": "programming",
@@ -57,9 +43,9 @@ window.ROADMAP = {
           "target": false,
           "summary": "Read, modify, compile, and debug small programs before tackling low-level Windows examples.",
           "details": [
-            "C: pointers, structs, arrays, allocation, function pointers, compilation, and linking.",
-            "C++: references, object lifetime, basic classes, and reading Windows examples; Python: files, parsing, and small analysis scripts.",
-            "Choose a main C resource, then fill the C++ and Python gaps; these are alternatives, not five courses to finish."
+            "C: CS50x weeks 1–5 and their exercises, covering functions, arrays, pointers, structs, allocation, and debugging. Supplement function pointers, compilation, and linking.",
+            "C++: selected LearnCpp lessons on references, classes, object lifetime, and reading Windows examples.",
+            "Python: files, bytes, collections, parsing, and reading/modifying analysis scripts. HTB Introduction to Python 3 or equivalent is enough."
           ],
           "resources": [
             {
@@ -95,7 +81,8 @@ window.ROADMAP = {
           ],
           "goal": "You can compile and debug a small C program with pointers and structs, read basic C++, and parse a log in Python.",
           "platform": "shared",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Recommended background"
         },
         {
           "id": "htb-assembly",
@@ -105,7 +92,7 @@ window.ROADMAP = {
           "target": false,
           "summary": "Connect C source to registers, memory, stack frames, and function calls.",
           "details": [
-            "Choose OST2, HTB, or the book as your main assembly resource; use the others to close gaps.",
+            "Choose OST2 Arch1001 OR HTB Intro to Assembly Language as your primary course. Use the book as a topic reference.",
             "Learn Windows x64 argument passing and stack conventions as well as the Linux examples used by many introductory resources."
           ],
           "resources": [
@@ -136,36 +123,8 @@ window.ROADMAP = {
           ],
           "goal": "You can trace a short compiled function, identify arguments and return values, and explain its stack frame.",
           "platform": "shared",
-          "htbModule": false
-        },
-        {
-          "id": "ost2-arch2001",
-          "title": "Operating systems and hardware boundaries",
-          "provider": "Mixed",
-          "kind": "optional",
-          "target": false,
-          "summary": "Understand address spaces, privilege levels, paging, and system calls.",
-          "details": [
-            "Study the ideas needed to explain a process and a user/kernel transition; save the deeper hardware labs for the kernel stage if necessary.",
-            "Full completion of either resource is optional and should not delay ordinary Windows user-mode work."
-          ],
-          "resources": [
-            {
-              "label": "Arch2001 — x86-64 OS Internals",
-              "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BArch2001_x86-64_OS_Internals%2B2024_v1/about",
-              "type": "free",
-              "note": "Selected architecture lessons explain paging, privilege levels, interrupts, and hardware support for an OS."
-            },
-            {
-              "label": "Operating Systems: Three Easy Pieces · free online book",
-              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
-              "type": "book",
-              "note": "Free author-hosted chapters on processes, virtual memory, and concurrency offer the broader OS foundation."
-            }
-          ],
-          "goal": "You can explain virtual versus physical memory and why a user-mode program needs system calls.",
-          "platform": "shared",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Recommended background"
         },
         {
           "id": "windows-internals",
@@ -175,9 +134,8 @@ window.ROADMAP = {
           "target": false,
           "summary": "Understand processes, threads, virtual memory, handles, tokens, and the user/kernel boundary.",
           "details": [
-            "Inspect real processes and memory while studying the concepts.",
-            "Choose the free documentation route, a TrainSec course, or selected Windows Internals chapters; you do not need to complete all three.",
-            "Day 1 gives the starting foundation; the bundle adds depth if you want it."
+            "Use TrainSec Windows Internals Day 1 OR Microsoft references for processes, threads, virtual memory, DLLs, handles, tokens, and the user/kernel boundary.",
+            "Inspect a real process while reading. Use selected Windows Internals chapters as references."
           ],
           "resources": [
             {
@@ -193,12 +151,6 @@ window.ROADMAP = {
               "note": "A guided introduction to Windows architecture, processes, memory, handles, and basic WinDbg."
             },
             {
-              "label": "TrainSec · Windows Internals Bundle",
-              "url": "https://trainsec.net/courses/windows-internals-bundle/",
-              "type": "paid",
-              "note": "Choose this instead of Day 1 alone for a broader structured Windows internals route."
-            },
-            {
               "label": "Windows Internals · Parts 1 and 2",
               "url": "https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals",
               "type": "book",
@@ -207,7 +159,140 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a process’s threads, handles, token, loaded modules, and memory layout.",
           "platform": "windows",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Recommended background"
+        },
+        {
+          "id": "purple-intro",
+          "title": "Intro to Academy’s Purple Modules",
+          "provider": "HTB",
+          "kind": "foundation",
+          "target": false,
+          "summary": "Learn the environment and workflow used by the purple-team labs.",
+          "details": [
+            "The Cyber Range instructions explicitly call completing this module a strict prerequisite.",
+            "This preparation module is outside the 13-module CDEP certification path."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Intro to Academy’s Purple Modules",
+              "url": "https://academy.hackthebox.com/course/preview/intro-to-academys-purple-modules",
+              "type": "paid",
+              "note": "Learn the HTB-specific setup required before its Detection & OpSec range."
+            }
+          ],
+          "goal": "You can connect to the lab, follow its workflow, and locate the evidence you need.",
+          "platform": "shared",
+          "htbModule": true,
+          "requirement": "Required Cyber Range preparation · outside the 13-module path"
+        }
+      ]
+    },
+    {
+      "id": "detection-core",
+      "title": "Observe and detect",
+      "steps": [
+        {
+          "id": "detection-range",
+          "title": "Detection & OpSec Cyber Range",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Practice logging, evidence collection, and detection validation in the range.",
+          "details": [
+            "Complete Intro to Academy’s Purple Modules first.",
+            "Practice collecting telemetry, validating detections, and reviewing the lab evidence."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Detection & OpSec Cyber Range",
+              "url": "https://academy.hackthebox.com/course/preview/detection--opsec-cyber-range",
+              "type": "paid",
+              "note": "Practice in the HTB range after the Purple introduction."
+            },
+            {
+              "label": "Microsoft · Sysmon",
+              "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon",
+              "type": "free",
+              "note": "Use the event and configuration reference to understand what your sensor actually records."
+            },
+            {
+              "label": "Atomic Red Team",
+              "url": "https://www.atomicredteam.io/",
+              "type": "free",
+              "note": "Optional open-source tests for validating detections in your own authorized lab."
+            }
+          ],
+          "goal": "You can reproduce a lab action, collect its logs, and check whether a detection sees it.",
+          "platform": "shared",
+          "htbModule": true,
+          "requirement": "Required path module"
+        },
+        {
+          "id": "intro-detection-engineering",
+          "title": "Introduction to Detection Engineering",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Turn a behavior into telemetry, a detection hypothesis, a rule, and a validated result.",
+          "details": [
+            "Bring Python, basic C/C++, YARA/Sigma, malware analysis, Windows logs, and Splunk skills.",
+            "Test both malicious and benign activity, tune false positives, and document evidence and limitations."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Introduction to Detection Engineering",
+              "url": "https://academy.hackthebox.com/course/preview/introduction-to-detection-engineering",
+              "type": "paid",
+              "note": "The required CDEP module combines detection design, investigation, and validation."
+            },
+            {
+              "label": "Sigma documentation",
+              "url": "https://sigmahq.io/docs/",
+              "type": "free",
+              "note": "Reference rule syntax, log sources, and conversion as you write and test detections."
+            },
+            {
+              "label": "Atomic Red Team",
+              "url": "https://www.atomicredteam.io/",
+              "type": "free",
+              "note": "Use a focused test to check your hypothesis and retain the resulting evidence."
+            }
+          ],
+          "goal": "You can document a tested rule, its required telemetry, and likely false positives.",
+          "platform": "shared",
+          "htbModule": true,
+          "requirement": "Required path module"
+        },
+        {
+          "id": "htb-windbg",
+          "title": "Introduction to Dynamic Analysis with WinDbg",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Use WinDbg to connect API calls, call stacks, registers, and memory to behavior.",
+          "details": [
+            "The HTB module teaches WinDbg. External introductory debugging courses are optional help if you get stuck.",
+            "In this suggested study order, Purple introduction → Cyber Range → Introduction to Detection Engineering comes before the full WinDbg module."
+          ],
+          "resources": [
+            {
+              "label": "Microsoft · Get started with Windows debugging",
+              "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/getting-started-with-windows-debugging",
+              "type": "free",
+              "note": "Use the official setup and debugging guidance as a free alternative or reference."
+            },
+            {
+              "label": "HTB · Introduction to Dynamic Analysis with WinDbg",
+              "url": "https://academy.hackthebox.com/course/preview/introduction-to-dynamic-analysis-with-windbg",
+              "type": "paid",
+              "note": "Apply debugging to security analysis in the required CDEP module."
+            }
+          ],
+          "goal": "You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory.",
+          "platform": "windows",
+          "htbModule": true,
+          "requirement": "Required path module"
         },
         {
           "id": "windows-system-programming",
@@ -218,7 +303,8 @@ window.ROADMAP = {
           "summary": "Read and modify the C/C++ code behind Windows behavior.",
           "details": [
             "Practice handles, process/thread APIs, memory allocation, DLL loading, errors, and cleanup.",
-            "Focus on the Win32/Native API boundary and relevant examples; a complete Windows application-development curriculum is unnecessary."
+            "Focus on the Win32/Native API boundary and relevant examples; a complete Windows application-development curriculum is unnecessary.",
+            "Use Microsoft documentation and small coding exercises OR selected TrainSec System Programming lessons; focus on the APIs these labs use."
           ],
           "goal": "You can write a small program that queries a process, uses a DLL, and handles errors and resources correctly.",
           "resources": [
@@ -248,7 +334,8 @@ window.ROADMAP = {
             }
           ],
           "platform": "windows",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Preparation before injection and API monitoring"
         },
         {
           "id": "ost2-dbg1101",
@@ -276,12 +363,6 @@ window.ROADMAP = {
               "note": "Learn the IDA interface and debugger, then practice interpreting unfamiliar functions."
             },
             {
-              "label": "Dbg1102 — Introductory Ghidra",
-              "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg1102_IntroGhidra%2B2024_v2/about",
-              "type": "free",
-              "note": "Optional Ghidra debugger introduction after basic WinDbg or GDB; return to it later if needed."
-            },
-            {
               "label": "Practical Malware Analysis",
               "url": "https://nostarch.com/malware.htm",
               "type": "book",
@@ -290,150 +371,8 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a small PE’s imports and sections and follow an interesting function through disassembly.",
           "platform": "windows",
-          "htbModule": false
-        }
-      ]
-    },
-    {
-      "id": "detection-core",
-      "title": "Observe and detect",
-      "eyebrow": "Phase 02",
-      "description": "Use debugging and telemetry to turn Windows behavior into tested detections.",
-      "steps": [
-        {
-          "id": "htb-windbg",
-          "title": "Introduction to Dynamic Analysis with WinDbg",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Use WinDbg to connect API calls, call stacks, registers, and memory to behavior.",
-          "details": [
-            "If new to WinDbg, start with OST2 Dbg1011 or Microsoft’s introduction, then apply the skills in the HTB module.",
-            "Use Dbg2011 when kernel-debugging gaps appear; completing an OST2 course does not complete this HTB module.",
-            "Putting this before Introduction to Detection Engineering is a recommended study order, not that module’s stated prerequisite."
-          ],
-          "resources": [
-            {
-              "label": "Dbg1011 — Introductory WinDbg",
-              "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg1011_WinDbg1%2B2024_v1/about",
-              "type": "free",
-              "note": "Free introductory WinDbg route for breakpoints, registers, memory, and stepping."
-            },
-            {
-              "label": "Dbg2011 — Intermediate WinDbg",
-              "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg2011_WinDbg2%2B2021_v1/about",
-              "type": "free",
-              "note": "Add intermediate WinDbg and introductory kernel debugging when the lab needs it."
-            },
-            {
-              "label": "Microsoft · Get started with Windows debugging",
-              "url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/getting-started-with-windows-debugging",
-              "type": "free",
-              "note": "Use the official setup and debugging guidance as a free alternative or reference."
-            },
-            {
-              "label": "HTB · Introduction to Dynamic Analysis with WinDbg",
-              "url": "https://academy.hackthebox.com/course/preview/introduction-to-dynamic-analysis-with-windbg",
-              "type": "paid",
-              "note": "Apply debugging to security analysis in the proposed advanced HTB module."
-            }
-          ],
-          "goal": "You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory.",
-          "platform": "windows",
-          "htbModule": true
-        },
-        {
-          "id": "purple-intro",
-          "title": "Purple lab workflow",
-          "provider": "HTB",
-          "kind": "foundation",
-          "target": false,
-          "summary": "Learn the environment and workflow used by the purple-team labs.",
-          "details": [
-            "This is an explicit prerequisite for the Detection & OpSec Cyber Range.",
-            "It is recommended preparation for Introduction to Detection Engineering; its inclusion in the future certification path is unconfirmed."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Intro to Academy’s Purple Modules",
-              "url": "https://academy.hackthebox.com/course/preview/intro-to-academys-purple-modules",
-              "type": "paid",
-              "note": "Learn the HTB-specific setup required before its Detection & OpSec range."
-            }
-          ],
-          "goal": "You can connect to the lab, follow its workflow, and locate the evidence you need.",
-          "platform": "shared",
-          "htbModule": true
-        },
-        {
-          "id": "detection-range",
-          "title": "Telemetry and detection validation lab",
-          "provider": "HTB",
-          "kind": "foundation",
-          "target": false,
-          "summary": "Practice logging, evidence collection, and detection validation in the range.",
-          "details": [
-            "Complete the Purple introduction first.",
-            "Recommended preparation for Introduction to Detection Engineering, not a confirmed eligibility requirement for the upcoming certification."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Detection & OpSec Cyber Range",
-              "url": "https://academy.hackthebox.com/course/preview/detection--opsec-cyber-range",
-              "type": "paid",
-              "note": "Practice in the HTB range after the Purple introduction."
-            },
-            {
-              "label": "Microsoft · Sysmon",
-              "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon",
-              "type": "free",
-              "note": "Use the event and configuration reference to understand what your sensor actually records."
-            },
-            {
-              "label": "Atomic Red Team",
-              "url": "https://www.atomicredteam.io/",
-              "type": "free",
-              "note": "Optional open-source tests for validating detections in your own authorized lab."
-            }
-          ],
-          "goal": "You can reproduce a lab action, collect its logs, and check whether a detection sees it.",
-          "platform": "shared",
-          "htbModule": true
-        },
-        {
-          "id": "intro-detection-engineering",
-          "title": "Introduction to Detection Engineering",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Turn a behavior into telemetry, a detection hypothesis, a rule, and a validated result.",
-          "details": [
-            "Bring Python, basic C/C++, YARA/Sigma, malware analysis, Windows logs, and Splunk skills.",
-            "Test both malicious and benign activity, tune false positives, and document evidence and limitations."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Introduction to Detection Engineering",
-              "url": "https://academy.hackthebox.com/course/preview/introduction-to-detection-engineering",
-              "type": "paid",
-              "note": "The proposed HTB module combines detection design, investigation, and validation."
-            },
-            {
-              "label": "Sigma documentation",
-              "url": "https://sigmahq.io/docs/",
-              "type": "free",
-              "note": "Reference rule syntax, log sources, and conversion as you write and test detections."
-            },
-            {
-              "label": "Atomic Red Team",
-              "url": "https://www.atomicredteam.io/",
-              "type": "free",
-              "note": "Use a focused test to check your hypothesis and retain the resulting evidence."
-            }
-          ],
-          "goal": "You can document a tested rule, its required telemetry, and likely false positives.",
-          "platform": "shared",
-          "htbModule": true
+          "htbModule": false,
+          "requirement": "Preparation before advanced Windows tradecraft"
         },
         {
           "id": "token-manipulation",
@@ -451,7 +390,7 @@ window.ROADMAP = {
               "label": "HTB · Detecting Access Token Manipulation Attacks",
               "url": "https://academy.hackthebox.com/course/preview/detecting-access-token-manipulation-attacks",
               "type": "paid",
-              "note": "Practice token-manipulation analysis and detection in the proposed HTB module."
+              "note": "Practice token-manipulation analysis and detection in the required CDEP module."
             },
             {
               "label": "Microsoft · Access tokens",
@@ -468,7 +407,8 @@ window.ROADMAP = {
           ],
           "goal": "You can explain how a token change affects identity, privileges, and observable behavior.",
           "platform": "windows",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         },
         {
           "id": "process-injection",
@@ -486,30 +426,19 @@ window.ROADMAP = {
               "label": "HTB · Process Injection Attacks and Detection",
               "url": "https://academy.hackthebox.com/course/preview/process-injection-attacks-and-detection",
               "type": "paid",
-              "note": "Work through the proposed HTB injection analysis and detection labs."
+              "note": "Work through the CDEP injection analysis and detection labs."
             },
             {
               "label": "MITRE ATT&CK · Process Injection",
               "url": "https://attack.mitre.org/techniques/T1055/",
               "type": "free",
               "note": "Compare injection families and use the references to understand behavioral differences."
-            },
-            {
-              "label": "13Cubed · Investigating Windows Memory",
-              "url": "https://training.13cubed.com/investigating-windows-memory",
-              "type": "paid",
-              "note": "Choose this for injection, hollowing, hooks, and memory evidence using Volatility and MemProcFS; expects endpoint-forensics knowledge."
-            },
-            {
-              "label": "The Art of Memory Forensics",
-              "url": "https://www.wiley-vch.de/en/areas-interest/computing-computer-sciences/the-art-of-memory-forensics-978-1-118-82509-9",
-              "type": "book",
-              "note": "A deeper memory-analysis reference; its older tools and OS structures need comparison with current documentation."
             }
           ],
           "goal": "You can connect an injection technique to API behavior, suspicious memory, and telemetry.",
           "platform": "windows",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         },
         {
           "id": "api-monitoring",
@@ -527,7 +456,7 @@ window.ROADMAP = {
               "label": "HTB · Windows API Monitoring and Hooking",
               "url": "https://academy.hackthebox.com/course/preview/windows-api-monitoring-and-hooking",
               "type": "paid",
-              "note": "The proposed HTB module applies monitoring and hooking to detection."
+              "note": "The required CDEP module applies monitoring and hooking to detection."
             },
             {
               "label": "Microsoft · Detours",
@@ -538,7 +467,8 @@ window.ROADMAP = {
           ],
           "goal": "You can explain what an API hook observes, changes, and misses.",
           "platform": "windows",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         },
         {
           "id": "low-level-detectability",
@@ -561,15 +491,14 @@ window.ROADMAP = {
           ],
           "goal": "You can explain which low-level signals support a detection and where visibility can fail.",
           "platform": "windows",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         }
       ]
     },
     {
       "id": "windows-tradecraft",
-      "title": "Windows Tradecraft",
-      "eyebrow": "Phase 03",
-      "description": "Use stronger debugging and Windows platform knowledge to analyze persistence, escalation, and credential access.",
+      "title": "Windows tradecraft",
       "steps": [
         {
           "id": "com-wmi",
@@ -604,7 +533,8 @@ window.ROADMAP = {
           ],
           "goal": "You can explain COM activation and inspect a WMI namespace, provider, and event subscription.",
           "platform": "windows",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Preparation before WMI, persistence, and privilege escalation"
         },
         {
           "id": "wmi-tradecraft",
@@ -638,7 +568,8 @@ window.ROADMAP = {
           ],
           "goal": "You can trace WMI activity from the underlying mechanism to its detection evidence.",
           "platform": "windows",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         },
         {
           "id": "persistence-tradecraft",
@@ -662,17 +593,12 @@ window.ROADMAP = {
               "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns",
               "type": "free",
               "note": "Inspect autostart locations and compare a clean baseline with lab changes."
-            },
-            {
-              "label": "13Cubed · Investigating Windows Endpoints",
-              "url": "https://training.13cubed.com/investigating-windows-endpoints",
-              "type": "paid",
-              "note": "Use the registry, services, scheduled-task, and execution-evidence lessons for a forensic perspective."
             }
           ],
           "goal": "You can explain a persistence mechanism, its artifacts, and a validated detection.",
           "platform": "windows",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         },
         {
           "id": "windows-privesc-foundation",
@@ -683,7 +609,7 @@ window.ROADMAP = {
           "summary": "Fill privilege-escalation knowledge gaps before the detection-focused tradecraft module.",
           "details": [
             "Complete or review the module if the underlying techniques are unfamiliar.",
-            "If you already have equivalent practical knowledge, avoid repeating it solely for this proposed prep sequence."
+            "If you already have equivalent practical knowledge, avoid repeating it solely for this suggested study sequence."
           ],
           "resources": [
             {
@@ -701,7 +627,8 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.",
           "platform": "windows",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Preparation before Privilege Escalation Tradecraft"
         },
         {
           "id": "privesc-tradecraft",
@@ -724,7 +651,8 @@ window.ROADMAP = {
           ],
           "goal": "You can connect an escalation’s code behavior to the resulting telemetry.",
           "platform": "windows",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         },
         {
           "id": "active-directory-foundation",
@@ -759,7 +687,8 @@ window.ROADMAP = {
           ],
           "goal": "You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites.",
           "platform": "windows",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Preparation before Credential Access Tradecraft"
         },
         {
           "id": "credential-access-tradecraft",
@@ -776,7 +705,7 @@ window.ROADMAP = {
               "label": "HTB · Credential Access Tradecraft Analysis",
               "url": "https://academy.hackthebox.com/course/preview/credential-access-tradecraft-analysis",
               "type": "paid",
-              "note": "Apply AD, WinDbg, C/C++, Win32, and Splunk foundations to the proposed HTB module."
+              "note": "Apply AD, WinDbg, C/C++, Win32, and Splunk foundations to the required CDEP module."
             },
             {
               "label": "Microsoft · Sysmon process-access events",
@@ -787,58 +716,15 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a credential-access behavior, its required access, and useful detection evidence.",
           "platform": "windows",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         }
       ]
     },
     {
       "id": "windows-kernel",
       "title": "Windows kernel",
-      "eyebrow": "Phase 04",
-      "description": "Connect Windows kernel behavior to the telemetry used by detections.",
       "steps": [
-        {
-          "id": "ost2-arch2821",
-          "title": "Kernel internals and debugging",
-          "provider": "Mixed",
-          "kind": "optional",
-          "target": false,
-          "summary": "Close kernel-memory and debugger gaps before working with kernel telemetry.",
-          "details": [
-            "Use the earlier WinDbg foundation, then Dbg2011 if needed, Dbg3011 for the environment, and Arch2821 for deeper kernel concepts.",
-            "Focus on objects, memory, IRQL, synchronization, and inspecting the kernel; a full driver-development course is not a prerequisite.",
-            "This is optional depth: use it when kernel labs expose gaps instead of treating every linked resource as mandatory."
-          ],
-          "resources": [
-            {
-              "label": "Dbg2011 — Intermediate WinDbg",
-              "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg2011_WinDbg2%2B2021_v1/about",
-              "type": "free",
-              "note": "Start here if you still need intermediate WinDbg and initial kernel-debugging practice."
-            },
-            {
-              "label": "Dbg3011 — Advanced WinDbg",
-              "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg3011_WinDbg3%2B2023_v1/about",
-              "type": "free",
-              "note": "Set up the two-VM debugging environment expected by Arch2821, or use an equivalent setup."
-            },
-            {
-              "label": "Arch2821 — Windows Kernel Internals 2",
-              "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BArch2821_Windows_Kernel_Internals_2%2B2023_v1/about",
-              "type": "free",
-              "note": "Study Windows kernel internals after introductory/intermediate debugging and the required environment setup."
-            },
-            {
-              "label": "Windows Internals · Parts 1 and 2",
-              "url": "https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals",
-              "type": "book",
-              "note": "Use focused chapters to explain the kernel objects and mechanisms you inspect."
-            }
-          ],
-          "goal": "You can attach to a lab kernel, inspect its state, and explain the objects and execution context relevant to your telemetry.",
-          "platform": "windows",
-          "htbModule": false
-        },
         {
           "id": "kernel-telemetry",
           "title": "Windows Kernel Telemetry & Detection Techniques",
@@ -862,25 +748,18 @@ window.ROADMAP = {
               "url": "https://learn.microsoft.com/en-us/windows/win32/etw/event-tracing-portal",
               "type": "free",
               "note": "Reference ETW providers, controllers, consumers, and event collection."
-            },
-            {
-              "label": "TrainSec · EDR Internals: Research & Development",
-              "url": "https://trainsec.net/courses/edr-internals-research-development/",
-              "type": "paid",
-              "note": "Optional paid depth specifically on EDR sensors, kernel callbacks, and detection components; this broader course is not needed for HTB completion."
             }
           ],
           "goal": "You can explain a kernel telemetry source, its evidence, and its limitations.",
           "platform": "windows",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         }
       ]
     },
     {
       "id": "linux-detection",
       "title": "Linux detection",
-      "eyebrow": "Phase 05",
-      "description": "Follow Linux processes, memory, and system calls into injection analysis and detection.",
       "steps": [
         {
           "id": "linux-foundations",
@@ -915,7 +794,8 @@ window.ROADMAP = {
           ],
           "goal": "You can inspect a Linux process, explain its permissions and open files, and troubleshoot basic connectivity.",
           "platform": "linux",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Recommended background"
         },
         {
           "id": "ost2-dbg1012",
@@ -944,7 +824,8 @@ window.ROADMAP = {
           ],
           "goal": "You can break on a function and inspect registers, arguments, stack frames, and memory in GDB.",
           "platform": "linux",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Recommended background"
         },
         {
           "id": "linux-buffer-overflows",
@@ -954,6 +835,7 @@ window.ROADMAP = {
           "target": false,
           "summary": "Build the Linux memory and debugger background specifically recommended for injection study.",
           "details": [
+            "HTB recommends Stack-Based Buffer Overflows on Linux x86 before Linux Process Injections & Detections.",
             "The entire binary-exploitation path and Windows buffer-overflow module are not needed for this branch.",
             "Apply Linux, networking, assembly, C, and GDB foundations in the module’s labs."
           ],
@@ -973,7 +855,8 @@ window.ROADMAP = {
           ],
           "goal": "You can explain a stack overwrite in a lab and follow the changed control flow in GDB.",
           "platform": "linux",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Recommended background"
         },
         {
           "id": "linux-injection",
@@ -1007,15 +890,14 @@ window.ROADMAP = {
           ],
           "goal": "You can connect Linux injection behavior to process memory and detection evidence.",
           "platform": "linux",
-          "htbModule": true
+          "htbModule": true,
+          "requirement": "Required path module"
         }
       ]
     },
     {
       "id": "certification",
       "title": "Certification",
-      "eyebrow": "Phase 06",
-      "description": "Use HTB’s published path and exam guide to confirm eligibility.",
       "steps": [
         {
           "id": "official-path",
@@ -1023,31 +905,217 @@ window.ROADMAP = {
           "provider": "HTB",
           "kind": "launch",
           "target": false,
-          "summary": "Reconcile this preparation with HTB’s published syllabus before booking the exam.",
+          "summary": "HTB Certified Detection Engineering Principal (CDEP): complete the relevant path and hold a valid exam voucher.",
           "details": [
-            "HTB announced a Detection Engineering certification, but its final certification name and syllabus have not been verified. No matching path or certification was listed when checked on October 5, 2026.",
-            "The June announcement targeted Q3 2026. That target has passed; this roadmap does not claim a confirmed release date.",
-            "HTB’s certification library says an exam requires completion of the related Job Role Path and a valid voucher. Check the new certification’s own exam guide when it appears.",
-            "Check recognized module completions, finish every remaining required module and assessment until the official path reaches 100%, then confirm voucher/access rules and take the exam.",
-            "The 12 target modules here are a proposed advanced preparation set. No OST2 course or separate CDSA exam is confirmed as a new-certification eligibility requirement."
+            "Eligibility: HTB requires 100% completion of the relevant certification path plus a valid voucher. Complete any remaining modules and assessments until Academy shows 100%.",
+            "CDEP has a 10-day exam window. Read HTB’s current exam guide before starting.",
+            "HTB lists 75 estimated study days / 600 hours for the path. One estimated day means eight hours of study; this is not a calendar deadline or a personal completion prediction.",
+            "External courses, books, the CDSA exam, and a full driver-development curriculum are not CDEP eligibility requirements."
           ],
           "resources": [
             {
-              "label": "Official HTB announcement",
-              "url": "https://www.hackthebox.com/blog/htb-new-platform-capabilities-defensive-security",
-              "type": "free",
-              "note": "The announcement establishes the planned certification, not a final syllabus or current exam guide."
+              "label": "Official Detection Engineer path",
+              "url": "https://academy.hackthebox.com/path/preview/detection-engineer",
+              "note": "Confirmed 13-module syllabus and official order.",
+              "type": "free"
             },
             {
-              "label": "HTB certification library",
-              "url": "https://academy.hackthebox.com/app/library/certificates",
-              "type": "free",
-              "note": "Check the published certification and its actual eligibility requirements when it appears."
+              "label": "HTB Certified Detection Engineering Principal",
+              "url": "https://academy.hackthebox.com/preview/certifications/htb-certified-detection-engineering-principal",
+              "note": "Official certification page.",
+              "type": "free"
+            },
+            {
+              "label": "HTB · Academy certifications",
+              "url": "https://help.hackthebox.com/en/articles/12741732-academy-certifications",
+              "note": "Path completion, voucher eligibility, and 10-day CDEP exam window.",
+              "type": "free"
+            },
+            {
+              "label": "HTB · Academy modules & paths",
+              "url": "https://help.hackthebox.com/en/articles/12741910-academy-modules-paths",
+              "note": "75 estimated days / 600 hours; estimated days represent eight hours.",
+              "type": "free"
             }
           ],
           "goal": "HTB shows the official path at 100% and you have met that certification’s published exam and voucher requirements.",
           "platform": "shared",
-          "htbModule": false
+          "htbModule": false,
+          "requirement": "Exam eligibility"
+        }
+      ]
+    }
+  ],
+  "officialOrder": [
+    "detection-range",
+    "intro-detection-engineering",
+    "htb-windbg",
+    "process-injection",
+    "linux-injection",
+    "low-level-detectability",
+    "token-manipulation",
+    "api-monitoring",
+    "privesc-tradecraft",
+    "persistence-tradecraft",
+    "wmi-tradecraft",
+    "credential-access-tradecraft",
+    "kernel-telemetry"
+  ],
+  "extra": [
+    {
+      "id": "ost2-arch2001",
+      "title": "Operating systems and hardware boundaries",
+      "provider": "Mixed",
+      "kind": "optional",
+      "target": false,
+      "summary": "Understand address spaces, privilege levels, paging, and system calls.",
+      "details": [
+        "Study the ideas needed to explain a process and a user/kernel transition; save the deeper hardware labs for the kernel stage if necessary.",
+        "Full completion of either resource is optional and should not delay ordinary Windows user-mode work."
+      ],
+      "resources": [
+        {
+          "label": "Arch2001 — x86-64 OS Internals",
+          "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BArch2001_x86-64_OS_Internals%2B2024_v1/about",
+          "type": "free",
+          "note": "Selected architecture lessons explain paging, privilege levels, interrupts, and hardware support for an OS."
+        },
+        {
+          "label": "Operating Systems: Three Easy Pieces · free online book",
+          "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+          "type": "book",
+          "note": "Free author-hosted chapters on processes, virtual memory, and concurrency offer the broader OS foundation."
+        }
+      ],
+      "goal": "You can explain virtual versus physical memory and why a user-mode program needs system calls.",
+      "platform": "shared",
+      "htbModule": false,
+      "requirement": "Optional enrichment"
+    },
+    {
+      "id": "ost2-arch2821",
+      "title": "Kernel internals and debugging",
+      "provider": "Mixed",
+      "kind": "optional",
+      "target": false,
+      "summary": "Close kernel-memory and debugger gaps before working with kernel telemetry.",
+      "details": [
+        "Use the earlier WinDbg foundation, then Dbg2011 if needed, Dbg3011 for the environment, and Arch2821 for deeper kernel concepts.",
+        "Focus on objects, memory, IRQL, synchronization, and inspecting the kernel; a full driver-development course is not a prerequisite.",
+        "This is optional depth: use it when kernel labs expose gaps instead of treating every linked resource as mandatory."
+      ],
+      "resources": [
+        {
+          "label": "Dbg2011 — Intermediate WinDbg",
+          "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg2011_WinDbg2%2B2021_v1/about",
+          "type": "free",
+          "note": "Start here if you still need intermediate WinDbg and initial kernel-debugging practice."
+        },
+        {
+          "label": "Dbg3011 — Advanced WinDbg",
+          "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg3011_WinDbg3%2B2023_v1/about",
+          "type": "free",
+          "note": "Set up the two-VM debugging environment expected by Arch2821, or use an equivalent setup."
+        },
+        {
+          "label": "Arch2821 — Windows Kernel Internals 2",
+          "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BArch2821_Windows_Kernel_Internals_2%2B2023_v1/about",
+          "type": "free",
+          "note": "Study Windows kernel internals after introductory/intermediate debugging and the required environment setup."
+        },
+        {
+          "label": "Windows Internals · Parts 1 and 2",
+          "url": "https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals",
+          "type": "book",
+          "note": "Use focused chapters to explain the kernel objects and mechanisms you inspect."
+        }
+      ],
+      "goal": "You can attach to a lab kernel, inspect its state, and explain the objects and execution context relevant to your telemetry.",
+      "platform": "windows",
+      "htbModule": false,
+      "requirement": "Optional enrichment"
+    },
+    {
+      "id": "extra-tools",
+      "title": "Debugger help and deeper specialization",
+      "kind": "optional",
+      "target": false,
+      "requirement": "Optional enrichment",
+      "summary": "Return to these when a lab exposes a specific gap or you want to specialize.",
+      "details": [
+        "External introductory WinDbg is optional: CDEP already includes a WinDbg module. Ghidra is an optional tool alternative; retain IDA where a lab expects it.",
+        "Full TrainSec bundles and EDR Internals are deeper study. Selected API and COM lessons remain next to the relevant preparation.",
+        "Books throughout this guide are topic references, not another sequence to complete."
+      ],
+      "resources": [
+        {
+          "label": "TrainSec · Windows Internals Bundle",
+          "url": "https://trainsec.net/courses/windows-internals-bundle/",
+          "type": "paid",
+          "note": "Choose this instead of Day 1 alone for a broader structured Windows internals route."
+        },
+        {
+          "label": "Dbg1011 — Introductory WinDbg",
+          "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg1011_WinDbg1%2B2024_v1/about",
+          "type": "free",
+          "note": "Free introductory WinDbg route for breakpoints, registers, memory, and stepping."
+        },
+        {
+          "label": "Dbg2011 — Intermediate WinDbg",
+          "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg2011_WinDbg2%2B2021_v1/about",
+          "type": "free",
+          "note": "Add intermediate WinDbg and introductory kernel debugging when the lab needs it."
+        },
+        {
+          "label": "Dbg1102 — Introductory Ghidra",
+          "url": "https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg1102_IntroGhidra%2B2024_v2/about",
+          "type": "free",
+          "note": "Optional Ghidra debugger introduction after basic WinDbg or GDB; return to it later if needed."
+        },
+        {
+          "label": "TrainSec · EDR Internals: Research & Development",
+          "url": "https://trainsec.net/courses/edr-internals-research-development/",
+          "type": "paid",
+          "note": "Optional paid depth specifically on EDR sensors, kernel callbacks, and detection components; this broader course is not needed for HTB completion."
+        }
+      ]
+    },
+    {
+      "id": "forensic-depth",
+      "title": "Endpoint and memory forensics",
+      "kind": "optional",
+      "target": false,
+      "requirement": "Optional enrichment",
+      "platform": "windows",
+      "summary": "Use forensic artifacts to add depth to your live detection analysis.",
+      "details": [
+        "13Cubed endpoint training helps with event logs, registry, execution, and persistence evidence.",
+        "13Cubed memory training complements injection analysis; it is a separate forensic branch, not required CDEP path credit."
+      ],
+      "resources": [
+        {
+          "label": "13Cubed · free videos",
+          "url": "https://www.youtube.com/@13Cubed",
+          "type": "free",
+          "note": "Choose individual Windows forensics episodes to understand the artifacts behind an alert."
+        },
+        {
+          "label": "13Cubed · Investigating Windows Endpoints",
+          "url": "https://training.13cubed.com/investigating-windows-endpoints",
+          "type": "paid",
+          "note": "Use the registry, services, scheduled-task, and execution-evidence lessons for a forensic perspective."
+        },
+        {
+          "label": "13Cubed · Investigating Windows Memory",
+          "url": "https://training.13cubed.com/investigating-windows-memory",
+          "type": "paid",
+          "note": "Choose this for injection, hollowing, hooks, and memory evidence using Volatility and MemProcFS; expects endpoint-forensics knowledge."
+        },
+        {
+          "label": "The Art of Memory Forensics",
+          "url": "https://www.wiley-vch.de/en/areas-interest/computing-computer-sciences/the-art-of-memory-forensics-978-1-118-82509-9",
+          "type": "book",
+          "note": "A deeper memory-analysis reference; its older tools and OS structures need comparison with current documentation."
         }
       ]
     }

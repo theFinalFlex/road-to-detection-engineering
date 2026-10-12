@@ -17,10 +17,14 @@
     if (topic.platform === 'windows') context.push('Windows');
     if (topic.platform === 'linux') context.push('Linux');
     if (topic.htbModule) context.push('HTB Academy');
-    if (topic.kind === 'optional') context.push('Optional depth');
+    if (topic.requirement) context.push(topic.requirement);
     return `<details class="topic" id="topic-${escape(topic.id)}"><summary><span>${escape(topic.title)}</span><span class="topic-chevron" aria-hidden="true">+</span></summary><div class="topic-content">${context.length ? `<p class="topic-context">${context.join(' / ')}</p>` : ''}<p class="topic-summary">${escape(topic.summary)}</p>${topic.goal ? `<p class="topic-goal">${escape(topic.goal)}</p>` : ''}<ul class="topic-notes">${topic.details.map(detail => `<li>${escape(detail)}</li>`).join('')}</ul><div class="resources-by-type">${resourcesHTML(topic)}</div></div></details>`;
   }
 
   const reaction = '<figure class="manga-panel"><img src="https://i.pinimg.com/736x/a6/80/1c/a6801c177dd75370cd92a33e823fe53d.jpg" alt="A puzzled, sweating Killy glances sideways in a black-and-white BLAME! panel." width="736" height="451" loading="lazy" referrerpolicy="no-referrer"><figcaption>BLAME! / Tsutomu Nihei · <a href="https://www.pinterest.com/pin/1107111520935494274/" target="_blank" rel="noopener noreferrer">source</a></figcaption></figure>';
-  document.getElementById('roadmap-content').innerHTML = roadmap.phases.map(phase => `<section class="phase" id="${escape(phase.id)}" aria-labelledby="heading-${escape(phase.id)}"><h2 id="heading-${escape(phase.id)}">${escape(phase.title)}</h2><div class="phase-body">${phase.steps.map(topicHTML).join('')}</div></section>${phase.id === 'detection-core' ? reaction : ''}`).join('');
+  document.getElementById('roadmap-content').innerHTML = roadmap.phases.map(phase => `<section class="phase" id="${escape(phase.id)}" aria-labelledby="heading-${escape(phase.id)}"><h2 id="heading-${escape(phase.id)}">${escape(phase.title)}</h2><div class="phase-body">${phase.steps.map(topicHTML).join('')}</div></section>${phase.id === 'detection-core' ? reaction : ''}`).join('') + `<section class="phase" id="extra-help"><h2>Extra help</h2><div class="phase-body"><details class="topic"><summary>Extra help and deeper study<span class="topic-chevron" aria-hidden="true">+</span></summary><div class="topic-content">${roadmap.extra.map(topicHTML).join('')}</div></details></div></section>`;
+  const topics = Object.fromEntries(roadmap.phases.flatMap(p => p.steps).map(s => [s.id, s]));
+  document.getElementById('official-order').innerHTML = roadmap.officialOrder.map(id => `<li><a href="#topic-${escape(id)}">${escape(topics[id].title)}</a></li>`).join('');
+  function revealHash() { const topic = document.getElementById(location.hash.slice(1)); if (topic?.tagName === 'DETAILS') { topic.open = true; let parent = topic.parentElement; while(parent) {if(parent.tagName === 'DETAILS') parent.open = true; parent = parent.parentElement;} } }
+  addEventListener('hashchange', revealHash); revealHash();
 })();
