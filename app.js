@@ -17,6 +17,7 @@
     if (topic.platform === 'windows') context.push('Windows');
     if (topic.platform === 'linux') context.push('Linux');
     if (topic.htbModule) context.push('HTB Academy');
+    if (topic.pathNumber) context.push(`Path module ${topic.pathNumber} / 13`);
     if (topic.requirement) context.push(topic.requirement);
     return `<details class="topic" id="topic-${escape(topic.id)}"><summary><span>${escape(topic.title)}</span><span class="topic-chevron" aria-hidden="true">+</span></summary><div class="topic-content">${context.length ? `<p class="topic-context">${context.join(' / ')}</p>` : ''}<p class="topic-summary">${escape(topic.summary)}</p>${topic.goal ? `<p class="topic-goal">${escape(topic.goal)}</p>` : ''}<ul class="topic-notes">${topic.details.map(detail => `<li>${escape(detail)}</li>`).join('')}</ul><div class="resources-by-type">${resourcesHTML(topic)}</div></div></details>`;
   }

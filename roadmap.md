@@ -20,9 +20,9 @@ HTB Certified Detection Engineering Principal: 13 required path modules.
 12. Credential Access Tradecraft Analysis
 13. Windows Kernel Telemetry & Detection Techniques
 
-## Suggested study order
+## Roadmap · official HTB order
 
-Background study fills gaps. The suggested order groups related skills; only the official HTB path counts toward certification completion.
+The 13 certification modules follow HTB’s official order. Short preparation blocks sit before the modules that use them; only the official HTB path counts toward certification completion.
 
 ## Before CDEP
 
@@ -102,7 +102,7 @@ Practice goal: You can connect to the lab, follow its workflow, and locate the e
 
 - [HTB · Intro to Academy’s Purple Modules](https://academy.hackthebox.com/course/preview/intro-to-academys-purple-modules) (paid): Learn the HTB-specific setup required before its Detection & OpSec range.
 
-## Observe and detect
+## Detection and analysis
 
 ### Detection & OpSec Cyber Range
 
@@ -141,7 +141,7 @@ Required path module · windows
 Use WinDbg to connect API calls, call stacks, registers, and memory to behavior.
 
 - The HTB module teaches WinDbg. External introductory debugging courses are optional help if you get stuck.
-- In this suggested study order, Purple introduction → Cyber Range → Introduction to Detection Engineering comes before the full WinDbg module.
+- This is module 3 in the official CDEP path, after the Cyber Range and Introduction to Detection Engineering.
 
 Practice goal: You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory.
 
@@ -181,21 +181,6 @@ Practice goal: You can explain a small PE’s imports and sections and follow an
 - [Dbg1101 — Introductory IDA](https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2%2BDbg1101_IntroIDA%2B2024_v1/about) (free): Learn the IDA interface and debugger, then practice interpreting unfamiliar functions.
 - [Practical Malware Analysis](https://nostarch.com/malware.htm) (book): Use selected PE, IDA, and analysis labs; older tool screenshots and OS behavior need current references.
 
-### Detecting Access Token Manipulation Attacks
-
-Required path module · windows
-
-Understand tokens, privileges, and impersonation as detection opportunities.
-
-- Build on Windows command-line skills, malware analysis, assembly, C, and basic debugging.
-- Carry token and privilege knowledge into later tradecraft analysis.
-
-Practice goal: You can explain how a token change affects identity, privileges, and observable behavior.
-
-- [HTB · Detecting Access Token Manipulation Attacks](https://academy.hackthebox.com/course/preview/detecting-access-token-manipulation-attacks) (paid): Practice token-manipulation analysis and detection in the required CDEP module.
-- [Microsoft · Access tokens](https://learn.microsoft.com/en-us/windows/win32/secauthz/access-tokens) (free): Reference primary and impersonation tokens, privileges, and the APIs that inspect them.
-- [TrainSec · Windows System Programming 3](https://trainsec.net/courses/windows-system-programming-3/) (paid): Use the security and token lessons if the underlying C++/API behavior needs work.
-
 ### Process Injection Attacks and Detection
 
 Required path module · windows
@@ -210,149 +195,7 @@ Practice goal: You can connect an injection technique to API behavior, suspiciou
 - [HTB · Process Injection Attacks and Detection](https://academy.hackthebox.com/course/preview/process-injection-attacks-and-detection) (paid): Work through the CDEP injection analysis and detection labs.
 - [MITRE ATT&CK · Process Injection](https://attack.mitre.org/techniques/T1055/) (free): Compare injection families and use the references to understand behavioral differences.
 
-### Windows API Monitoring and Hooking
-
-Required path module · windows
-
-Explore what API monitoring can reveal about Windows execution.
-
-- Process Injection is explicitly recommended background.
-- Bring assembly, C/C++ pointers and structs, Splunk log analysis, and Windows attack detection knowledge.
-
-Practice goal: You can explain what an API hook observes, changes, and misses.
-
-- [HTB · Windows API Monitoring and Hooking](https://academy.hackthebox.com/course/preview/windows-api-monitoring-and-hooking) (paid): The required CDEP module applies monitoring and hooking to detection.
-- [Microsoft · Detours](https://github.com/microsoft/Detours) (free): Study the official API-instrumentation project and its samples alongside your lab results.
-
-### Windows Low Level Detectability
-
-Required path module · windows
-
-Deepen your understanding of low-level behavior and detection coverage.
-
-- Build on assembly, YARA/Sigma, Process Injection, and C/C++.
-- API Monitoring first is a useful learning sequence, but is not an explicitly listed prerequisite.
-
-Practice goal: You can explain which low-level signals support a detection and where visibility can fail.
-
-- [HTB · Windows Low Level Detectability](https://academy.hackthebox.com/course/preview/windows-low-level-detectability) (paid): Apply assembly, injection, C/C++, and YARA/Sigma foundations in HTB.
-
-## Windows tradecraft
-
-### COM and WMI fundamentals
-
-Preparation before WMI, persistence, and privilege escalation · windows
-
-Learn the Windows components behind WMI and persistence tradecraft.
-
-- Cover interfaces, CLSIDs/IIDs, activation, registration, namespaces, providers, and event subscriptions.
-- Use focused reference reading and inspect examples in a lab.
-
-Practice goal: You can explain COM activation and inspect a WMI namespace, provider, and event subscription.
-
-- [Microsoft · COM](https://learn.microsoft.com/en-us/windows/win32/com/component-object-model--com--portal) (free): Free reference for interfaces, activation, registration, CLSIDs, and IIDs.
-- [Microsoft · WMI](https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page) (free): Use the programming and administration guidance for namespaces, providers, and events.
-- [TrainSec · Windows System Programming 3](https://trainsec.net/courses/windows-system-programming-3/) (paid): Its COM section provides guided C++ examples of activation, servers, clients, and registration.
-
-### WMI Tradecraft Analysis
-
-Required path module · windows
-
-Analyze WMI behavior using Windows internals and telemetry.
-
-- Bring COM, services, auditing, PowerShell, C++, ATT&CK, and Splunk knowledge.
-
-Practice goal: You can trace WMI activity from the underlying mechanism to its detection evidence.
-
-- [HTB · WMI Tradecraft Analysis](https://academy.hackthebox.com/course/preview/wmi-tradecraft-analysis) (paid): Analyze WMI behavior with COM, Windows internals, PowerShell, and Splunk foundations.
-- [MITRE ATT&CK · WMI](https://attack.mitre.org/techniques/T1047/) (free): Use the technique references to compare legitimate administration with suspicious WMI execution.
-- [Microsoft · Sysmon WMI events](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-19-wmievent-wmieventfilter-activity-detected) (free): Reference filter, consumer, and binding events when checking WMI subscription telemetry.
-
-### Persistence Tradecraft Analysis
-
-Required path module · windows
-
-Investigate persistence mechanisms and develop evidence-based detections.
-
-- Apply Low Level Detectability, COM, Win32, C/C++, basic reversing/IDA, and Splunk foundations.
-
-Practice goal: You can explain a persistence mechanism, its artifacts, and a validated detection.
-
-- [HTB · Persistence Tradecraft Analysis](https://academy.hackthebox.com/course/preview/persistence-tradecraft-analysis) (paid): Apply low-level detectability, COM, Win32, basic reversing, and Splunk to persistence.
-- [Microsoft · Autoruns](https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns) (free): Inspect autostart locations and compare a clean baseline with lab changes.
-
-### Windows privilege-escalation fundamentals
-
-Preparation before Privilege Escalation Tradecraft · windows
-
-Fill privilege-escalation knowledge gaps before the detection-focused tradecraft module.
-
-- Complete or review the module if the underlying techniques are unfamiliar.
-- If you already have equivalent practical knowledge, avoid repeating it solely for this suggested study sequence.
-
-Practice goal: You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.
-
-- [HTB · Windows Privilege Escalation](https://academy.hackthebox.com/course/preview/windows-privilege-escalation) (paid): Fill technique gaps through guided labs before the detection-focused tradecraft module.
-- [Windows Internals · Part 1](https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals) (book): Reference tokens, access checks, and security boundaries instead of memorizing tool commands.
-
-### Privilege Escalation Tradecraft Analysis
-
-Required path module · windows
-
-Connect escalation techniques to debugger evidence and detection logic.
-
-- WinDbg, token detection, Low Level Detectability, and privilege-escalation foundations are covered earlier.
-- Use your COM, Win32, basic IDA, C/C++, and Splunk skills during analysis.
-
-Practice goal: You can connect an escalation’s code behavior to the resulting telemetry.
-
-- [HTB · Privilege Escalation Tradecraft Analysis](https://academy.hackthebox.com/course/preview/privilege-escalation-tradecraft-analysis) (paid): Apply the earlier WinDbg, token, low-level, and privilege-escalation study to detection.
-
-### Active Directory fundamentals and attacks
-
-Preparation before Credential Access Tradecraft · windows
-
-Understand the identity environment and attack behavior behind credential-access detections.
-
-- Fill AD fundamentals if needed, then complete or review Active Directory Enumeration & Attacks.
-- You do not need to earn CPTS or CAPE for this preparation step.
-
-Practice goal: You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites.
-
-- [Microsoft · Active Directory Domain Services overview](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) (free): A free starting reference for the domain, directory, and authentication environment.
-- [HTB · Introduction to Active Directory](https://academy.hackthebox.com/app/module/74) (paid): Fill the AD fundamentals if domains, users, groups, and authentication are unfamiliar.
-- [HTB · Active Directory Enumeration & Attacks](https://academy.hackthebox.com/course/preview/active-directory-enumeration--attacks) (paid): Practice the identity and attack behavior recommended before Credential Access Tradecraft.
-
-### Credential Access Tradecraft Analysis
-
-Required path module · windows
-
-Analyze credential-access behavior and turn the evidence into detections.
-
-- Build on WinDbg, AD Enumeration & Attacks, Windows attack detection with Splunk, Python, C/C++, Win32, basic IDA, and COM.
-
-Practice goal: You can explain a credential-access behavior, its required access, and useful detection evidence.
-
-- [HTB · Credential Access Tradecraft Analysis](https://academy.hackthebox.com/course/preview/credential-access-tradecraft-analysis) (paid): Apply AD, WinDbg, C/C++, Win32, and Splunk foundations to the required CDEP module.
-- [Microsoft · Sysmon process-access events](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-10-processaccess) (free): Reference source/target process access while reasoning about memory-access detections.
-
-## Windows kernel
-
-### Windows Kernel Telemetry & Detection Techniques
-
-Required path module · windows
-
-Build detections with a deeper understanding of kernel-level telemetry.
-
-- Bring Process Injection, WinDbg, assembly, C/C++, and Windows API/process/thread/PE knowledge.
-- Its late placement manages difficulty; it does not formally require every preceding tradecraft module.
-
-Practice goal: You can explain a kernel telemetry source, its evidence, and its limitations.
-
-- [HTB · Windows Kernel Telemetry & Detection Techniques](https://academy.hackthebox.com/course/preview/windows-kernel-telemetry--detection-techniques) (paid): Apply injection, WinDbg, assembly, C/C++, and Windows internals to detection telemetry.
-- [Microsoft · Event Tracing for Windows](https://learn.microsoft.com/en-us/windows/win32/etw/event-tracing-portal) (free): Reference ETW providers, controllers, consumers, and event collection.
-
-## Linux detection
+## Linux injection
 
 ### Linux processes, permissions, and networking
 
@@ -411,6 +254,165 @@ Practice goal: You can connect Linux injection behavior to process memory and de
 - [HTB · Linux Process Injections & Detections](https://academy.hackthebox.com/course/preview/linux-process-injections--detections) (paid): Apply Linux, C, Python, assembly, GDB, buffer-overflow, YARA/Sigma, and Splunk foundations.
 - [Linux man-pages · ptrace](https://man7.org/linux/man-pages/man2/ptrace.2.html) (free): Use the system-call reference to understand tracing, memory access, and permission checks.
 - [The Linux Programming Interface](https://nostarch.com/tlpi) (book): Return to process, signal, and memory APIs when the Linux execution model is unclear.
+
+## Windows detection
+
+### Windows Low Level Detectability
+
+Required path module · windows
+
+Deepen your understanding of low-level behavior and detection coverage.
+
+- Build on assembly, YARA/Sigma, Process Injection, and C/C++.
+- This is module 6 in the official path. Windows API Monitoring and Hooking follows later as module 8.
+
+Practice goal: You can explain which low-level signals support a detection and where visibility can fail.
+
+- [HTB · Windows Low Level Detectability](https://academy.hackthebox.com/course/preview/windows-low-level-detectability) (paid): Apply assembly, injection, C/C++, and YARA/Sigma foundations in HTB.
+
+### Detecting Access Token Manipulation Attacks
+
+Required path module · windows
+
+Understand tokens, privileges, and impersonation as detection opportunities.
+
+- Build on Windows command-line skills, malware analysis, assembly, C, and basic debugging.
+- Carry token and privilege knowledge into later tradecraft analysis.
+
+Practice goal: You can explain how a token change affects identity, privileges, and observable behavior.
+
+- [HTB · Detecting Access Token Manipulation Attacks](https://academy.hackthebox.com/course/preview/detecting-access-token-manipulation-attacks) (paid): Practice token-manipulation analysis and detection in the required CDEP module.
+- [Microsoft · Access tokens](https://learn.microsoft.com/en-us/windows/win32/secauthz/access-tokens) (free): Reference primary and impersonation tokens, privileges, and the APIs that inspect them.
+- [TrainSec · Windows System Programming 3](https://trainsec.net/courses/windows-system-programming-3/) (paid): Use the security and token lessons if the underlying C++/API behavior needs work.
+
+### Windows API Monitoring and Hooking
+
+Required path module · windows
+
+Explore what API monitoring can reveal about Windows execution.
+
+- Process Injection is explicitly recommended background.
+- Bring assembly, C/C++ pointers and structs, Splunk log analysis, and Windows attack detection knowledge.
+
+Practice goal: You can explain what an API hook observes, changes, and misses.
+
+- [HTB · Windows API Monitoring and Hooking](https://academy.hackthebox.com/course/preview/windows-api-monitoring-and-hooking) (paid): The required CDEP module applies monitoring and hooking to detection.
+- [Microsoft · Detours](https://github.com/microsoft/Detours) (free): Study the official API-instrumentation project and its samples alongside your lab results.
+
+## Windows tradecraft
+
+### COM and WMI fundamentals
+
+Preparation before WMI, persistence, and privilege escalation · windows
+
+Learn the Windows components behind WMI and persistence tradecraft.
+
+- Cover interfaces, CLSIDs/IIDs, activation, registration, namespaces, providers, and event subscriptions.
+- Use focused reference reading and inspect examples in a lab.
+
+Practice goal: You can explain COM activation and inspect a WMI namespace, provider, and event subscription.
+
+- [Microsoft · COM](https://learn.microsoft.com/en-us/windows/win32/com/component-object-model--com--portal) (free): Free reference for interfaces, activation, registration, CLSIDs, and IIDs.
+- [Microsoft · WMI](https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page) (free): Use the programming and administration guidance for namespaces, providers, and events.
+- [TrainSec · Windows System Programming 3](https://trainsec.net/courses/windows-system-programming-3/) (paid): Its COM section provides guided C++ examples of activation, servers, clients, and registration.
+
+### Windows privilege-escalation fundamentals
+
+Preparation before Privilege Escalation Tradecraft · windows
+
+Fill privilege-escalation knowledge gaps before the detection-focused tradecraft module.
+
+- Complete or review the module if the underlying techniques are unfamiliar.
+- If you already have equivalent practical knowledge, avoid repeating it solely for this suggested study sequence.
+
+Practice goal: You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.
+
+- [HTB · Windows Privilege Escalation](https://academy.hackthebox.com/course/preview/windows-privilege-escalation) (paid): Fill technique gaps through guided labs before the detection-focused tradecraft module.
+- [Windows Internals · Part 1](https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals) (book): Reference tokens, access checks, and security boundaries instead of memorizing tool commands.
+
+### Privilege Escalation Tradecraft Analysis
+
+Required path module · windows
+
+Connect escalation techniques to debugger evidence and detection logic.
+
+- WinDbg, token detection, Low Level Detectability, and privilege-escalation foundations are covered earlier.
+- Use your COM, Win32, basic IDA, C/C++, and Splunk skills during analysis.
+
+Practice goal: You can connect an escalation’s code behavior to the resulting telemetry.
+
+- [HTB · Privilege Escalation Tradecraft Analysis](https://academy.hackthebox.com/course/preview/privilege-escalation-tradecraft-analysis) (paid): Apply the earlier WinDbg, token, low-level, and privilege-escalation study to detection.
+
+### Persistence Tradecraft Analysis
+
+Required path module · windows
+
+Investigate persistence mechanisms and develop evidence-based detections.
+
+- Apply Low Level Detectability, COM, Win32, C/C++, basic reversing/IDA, and Splunk foundations.
+
+Practice goal: You can explain a persistence mechanism, its artifacts, and a validated detection.
+
+- [HTB · Persistence Tradecraft Analysis](https://academy.hackthebox.com/course/preview/persistence-tradecraft-analysis) (paid): Apply low-level detectability, COM, Win32, basic reversing, and Splunk to persistence.
+- [Microsoft · Autoruns](https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns) (free): Inspect autostart locations and compare a clean baseline with lab changes.
+
+### WMI Tradecraft Analysis
+
+Required path module · windows
+
+Analyze WMI behavior using Windows internals and telemetry.
+
+- Bring COM, services, auditing, PowerShell, C++, ATT&CK, and Splunk knowledge.
+
+Practice goal: You can trace WMI activity from the underlying mechanism to its detection evidence.
+
+- [HTB · WMI Tradecraft Analysis](https://academy.hackthebox.com/course/preview/wmi-tradecraft-analysis) (paid): Analyze WMI behavior with COM, Windows internals, PowerShell, and Splunk foundations.
+- [MITRE ATT&CK · WMI](https://attack.mitre.org/techniques/T1047/) (free): Use the technique references to compare legitimate administration with suspicious WMI execution.
+- [Microsoft · Sysmon WMI events](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-19-wmievent-wmieventfilter-activity-detected) (free): Reference filter, consumer, and binding events when checking WMI subscription telemetry.
+
+### Active Directory fundamentals and attacks
+
+Preparation before Credential Access Tradecraft · windows
+
+Understand the identity environment and attack behavior behind credential-access detections.
+
+- Fill AD fundamentals if needed, then complete or review Active Directory Enumeration & Attacks.
+- You do not need to earn CPTS or CAPE for this preparation step.
+
+Practice goal: You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites.
+
+- [Microsoft · Active Directory Domain Services overview](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) (free): A free starting reference for the domain, directory, and authentication environment.
+- [HTB · Introduction to Active Directory](https://academy.hackthebox.com/app/module/74) (paid): Fill the AD fundamentals if domains, users, groups, and authentication are unfamiliar.
+- [HTB · Active Directory Enumeration & Attacks](https://academy.hackthebox.com/course/preview/active-directory-enumeration--attacks) (paid): Practice the identity and attack behavior recommended before Credential Access Tradecraft.
+
+### Credential Access Tradecraft Analysis
+
+Required path module · windows
+
+Analyze credential-access behavior and turn the evidence into detections.
+
+- Build on WinDbg, AD Enumeration & Attacks, Windows attack detection with Splunk, Python, C/C++, Win32, basic IDA, and COM.
+
+Practice goal: You can explain a credential-access behavior, its required access, and useful detection evidence.
+
+- [HTB · Credential Access Tradecraft Analysis](https://academy.hackthebox.com/course/preview/credential-access-tradecraft-analysis) (paid): Apply AD, WinDbg, C/C++, Win32, and Splunk foundations to the required CDEP module.
+- [Microsoft · Sysmon process-access events](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-10-processaccess) (free): Reference source/target process access while reasoning about memory-access detections.
+
+## Windows kernel
+
+### Windows Kernel Telemetry & Detection Techniques
+
+Required path module · windows
+
+Build detections with a deeper understanding of kernel-level telemetry.
+
+- Bring Process Injection, WinDbg, assembly, C/C++, and Windows API/process/thread/PE knowledge.
+- Its late placement manages difficulty; it does not formally require every preceding tradecraft module.
+
+Practice goal: You can explain a kernel telemetry source, its evidence, and its limitations.
+
+- [HTB · Windows Kernel Telemetry & Detection Techniques](https://academy.hackthebox.com/course/preview/windows-kernel-telemetry--detection-techniques) (paid): Apply injection, WinDbg, assembly, C/C++, and Windows internals to detection telemetry.
+- [Microsoft · Event Tracing for Windows](https://learn.microsoft.com/en-us/windows/win32/etw/event-tracing-portal) (free): Reference ETW providers, controllers, consumers, and event collection.
 
 ## Certification
 

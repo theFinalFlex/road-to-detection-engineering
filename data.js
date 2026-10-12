@@ -190,7 +190,7 @@ window.ROADMAP = {
     },
     {
       "id": "detection-core",
-      "title": "Observe and detect",
+      "title": "Detection and analysis",
       "steps": [
         {
           "id": "detection-range",
@@ -226,7 +226,8 @@ window.ROADMAP = {
           "goal": "You can reproduce a lab action, collect its logs, and check whether a detection sees it.",
           "platform": "shared",
           "htbModule": true,
-          "requirement": "Required path module"
+          "requirement": "Required path module",
+          "pathNumber": 1
         },
         {
           "id": "intro-detection-engineering",
@@ -262,7 +263,8 @@ window.ROADMAP = {
           "goal": "You can document a tested rule, its required telemetry, and likely false positives.",
           "platform": "shared",
           "htbModule": true,
-          "requirement": "Required path module"
+          "requirement": "Required path module",
+          "pathNumber": 2
         },
         {
           "id": "htb-windbg",
@@ -273,7 +275,7 @@ window.ROADMAP = {
           "summary": "Use WinDbg to connect API calls, call stacks, registers, and memory to behavior.",
           "details": [
             "The HTB module teaches WinDbg. External introductory debugging courses are optional help if you get stuck.",
-            "In this suggested study order, Purple introduction → Cyber Range → Introduction to Detection Engineering comes before the full WinDbg module."
+            "This is module 3 in the official CDEP path, after the Cyber Range and Introduction to Detection Engineering."
           ],
           "resources": [
             {
@@ -292,7 +294,8 @@ window.ROADMAP = {
           "goal": "You can complete the HTB exercises and explain a breakpoint, its arguments, call stack, and relevant memory.",
           "platform": "windows",
           "htbModule": true,
-          "requirement": "Required path module"
+          "requirement": "Required path module",
+          "pathNumber": 3
         },
         {
           "id": "windows-system-programming",
@@ -375,42 +378,6 @@ window.ROADMAP = {
           "requirement": "Preparation before advanced Windows tradecraft"
         },
         {
-          "id": "token-manipulation",
-          "title": "Detecting Access Token Manipulation Attacks",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Understand tokens, privileges, and impersonation as detection opportunities.",
-          "details": [
-            "Build on Windows command-line skills, malware analysis, assembly, C, and basic debugging.",
-            "Carry token and privilege knowledge into later tradecraft analysis."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Detecting Access Token Manipulation Attacks",
-              "url": "https://academy.hackthebox.com/course/preview/detecting-access-token-manipulation-attacks",
-              "type": "paid",
-              "note": "Practice token-manipulation analysis and detection in the required CDEP module."
-            },
-            {
-              "label": "Microsoft · Access tokens",
-              "url": "https://learn.microsoft.com/en-us/windows/win32/secauthz/access-tokens",
-              "type": "free",
-              "note": "Reference primary and impersonation tokens, privileges, and the APIs that inspect them."
-            },
-            {
-              "label": "TrainSec · Windows System Programming 3",
-              "url": "https://trainsec.net/courses/windows-system-programming-3/",
-              "type": "paid",
-              "note": "Use the security and token lessons if the underlying C++/API behavior needs work."
-            }
-          ],
-          "goal": "You can explain how a token change affects identity, privileges, and observable behavior.",
-          "platform": "windows",
-          "htbModule": true,
-          "requirement": "Required path module"
-        },
-        {
           "id": "process-injection",
           "title": "Process Injection Attacks and Detection",
           "provider": "HTB",
@@ -438,328 +405,14 @@ window.ROADMAP = {
           "goal": "You can connect an injection technique to API behavior, suspicious memory, and telemetry.",
           "platform": "windows",
           "htbModule": true,
-          "requirement": "Required path module"
-        },
-        {
-          "id": "api-monitoring",
-          "title": "Windows API Monitoring and Hooking",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Explore what API monitoring can reveal about Windows execution.",
-          "details": [
-            "Process Injection is explicitly recommended background.",
-            "Bring assembly, C/C++ pointers and structs, Splunk log analysis, and Windows attack detection knowledge."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Windows API Monitoring and Hooking",
-              "url": "https://academy.hackthebox.com/course/preview/windows-api-monitoring-and-hooking",
-              "type": "paid",
-              "note": "The required CDEP module applies monitoring and hooking to detection."
-            },
-            {
-              "label": "Microsoft · Detours",
-              "url": "https://github.com/microsoft/Detours",
-              "type": "free",
-              "note": "Study the official API-instrumentation project and its samples alongside your lab results."
-            }
-          ],
-          "goal": "You can explain what an API hook observes, changes, and misses.",
-          "platform": "windows",
-          "htbModule": true,
-          "requirement": "Required path module"
-        },
-        {
-          "id": "low-level-detectability",
-          "title": "Windows Low Level Detectability",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Deepen your understanding of low-level behavior and detection coverage.",
-          "details": [
-            "Build on assembly, YARA/Sigma, Process Injection, and C/C++.",
-            "API Monitoring first is a useful learning sequence, but is not an explicitly listed prerequisite."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Windows Low Level Detectability",
-              "url": "https://academy.hackthebox.com/course/preview/windows-low-level-detectability",
-              "type": "paid",
-              "note": "Apply assembly, injection, C/C++, and YARA/Sigma foundations in HTB."
-            }
-          ],
-          "goal": "You can explain which low-level signals support a detection and where visibility can fail.",
-          "platform": "windows",
-          "htbModule": true,
-          "requirement": "Required path module"
-        }
-      ]
-    },
-    {
-      "id": "windows-tradecraft",
-      "title": "Windows tradecraft",
-      "steps": [
-        {
-          "id": "com-wmi",
-          "title": "COM and WMI fundamentals",
-          "provider": "Mixed",
-          "kind": "foundation",
-          "target": false,
-          "summary": "Learn the Windows components behind WMI and persistence tradecraft.",
-          "details": [
-            "Cover interfaces, CLSIDs/IIDs, activation, registration, namespaces, providers, and event subscriptions.",
-            "Use focused reference reading and inspect examples in a lab."
-          ],
-          "resources": [
-            {
-              "label": "Microsoft · COM",
-              "url": "https://learn.microsoft.com/en-us/windows/win32/com/component-object-model--com--portal",
-              "type": "free",
-              "note": "Free reference for interfaces, activation, registration, CLSIDs, and IIDs."
-            },
-            {
-              "label": "Microsoft · WMI",
-              "url": "https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page",
-              "type": "free",
-              "note": "Use the programming and administration guidance for namespaces, providers, and events."
-            },
-            {
-              "label": "TrainSec · Windows System Programming 3",
-              "url": "https://trainsec.net/courses/windows-system-programming-3/",
-              "type": "paid",
-              "note": "Its COM section provides guided C++ examples of activation, servers, clients, and registration."
-            }
-          ],
-          "goal": "You can explain COM activation and inspect a WMI namespace, provider, and event subscription.",
-          "platform": "windows",
-          "htbModule": false,
-          "requirement": "Preparation before WMI, persistence, and privilege escalation"
-        },
-        {
-          "id": "wmi-tradecraft",
-          "title": "WMI Tradecraft Analysis",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Analyze WMI behavior using Windows internals and telemetry.",
-          "details": [
-            "Bring COM, services, auditing, PowerShell, C++, ATT&CK, and Splunk knowledge."
-          ],
-          "resources": [
-            {
-              "label": "HTB · WMI Tradecraft Analysis",
-              "url": "https://academy.hackthebox.com/course/preview/wmi-tradecraft-analysis",
-              "type": "paid",
-              "note": "Analyze WMI behavior with COM, Windows internals, PowerShell, and Splunk foundations."
-            },
-            {
-              "label": "MITRE ATT&CK · WMI",
-              "url": "https://attack.mitre.org/techniques/T1047/",
-              "type": "free",
-              "note": "Use the technique references to compare legitimate administration with suspicious WMI execution."
-            },
-            {
-              "label": "Microsoft · Sysmon WMI events",
-              "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-19-wmievent-wmieventfilter-activity-detected",
-              "type": "free",
-              "note": "Reference filter, consumer, and binding events when checking WMI subscription telemetry."
-            }
-          ],
-          "goal": "You can trace WMI activity from the underlying mechanism to its detection evidence.",
-          "platform": "windows",
-          "htbModule": true,
-          "requirement": "Required path module"
-        },
-        {
-          "id": "persistence-tradecraft",
-          "title": "Persistence Tradecraft Analysis",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Investigate persistence mechanisms and develop evidence-based detections.",
-          "details": [
-            "Apply Low Level Detectability, COM, Win32, C/C++, basic reversing/IDA, and Splunk foundations."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Persistence Tradecraft Analysis",
-              "url": "https://academy.hackthebox.com/course/preview/persistence-tradecraft-analysis",
-              "type": "paid",
-              "note": "Apply low-level detectability, COM, Win32, basic reversing, and Splunk to persistence."
-            },
-            {
-              "label": "Microsoft · Autoruns",
-              "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns",
-              "type": "free",
-              "note": "Inspect autostart locations and compare a clean baseline with lab changes."
-            }
-          ],
-          "goal": "You can explain a persistence mechanism, its artifacts, and a validated detection.",
-          "platform": "windows",
-          "htbModule": true,
-          "requirement": "Required path module"
-        },
-        {
-          "id": "windows-privesc-foundation",
-          "title": "Windows privilege-escalation fundamentals",
-          "provider": "Mixed",
-          "kind": "foundation",
-          "target": false,
-          "summary": "Fill privilege-escalation knowledge gaps before the detection-focused tradecraft module.",
-          "details": [
-            "Complete or review the module if the underlying techniques are unfamiliar.",
-            "If you already have equivalent practical knowledge, avoid repeating it solely for this suggested study sequence."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Windows Privilege Escalation",
-              "url": "https://academy.hackthebox.com/course/preview/windows-privilege-escalation",
-              "type": "paid",
-              "note": "Fill technique gaps through guided labs before the detection-focused tradecraft module."
-            },
-            {
-              "label": "Windows Internals · Part 1",
-              "url": "https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals",
-              "type": "book",
-              "note": "Reference tokens, access checks, and security boundaries instead of memorizing tool commands."
-            }
-          ],
-          "goal": "You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.",
-          "platform": "windows",
-          "htbModule": false,
-          "requirement": "Preparation before Privilege Escalation Tradecraft"
-        },
-        {
-          "id": "privesc-tradecraft",
-          "title": "Privilege Escalation Tradecraft Analysis",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Connect escalation techniques to debugger evidence and detection logic.",
-          "details": [
-            "WinDbg, token detection, Low Level Detectability, and privilege-escalation foundations are covered earlier.",
-            "Use your COM, Win32, basic IDA, C/C++, and Splunk skills during analysis."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Privilege Escalation Tradecraft Analysis",
-              "url": "https://academy.hackthebox.com/course/preview/privilege-escalation-tradecraft-analysis",
-              "type": "paid",
-              "note": "Apply the earlier WinDbg, token, low-level, and privilege-escalation study to detection."
-            }
-          ],
-          "goal": "You can connect an escalation’s code behavior to the resulting telemetry.",
-          "platform": "windows",
-          "htbModule": true,
-          "requirement": "Required path module"
-        },
-        {
-          "id": "active-directory-foundation",
-          "title": "Active Directory fundamentals and attacks",
-          "provider": "Mixed",
-          "kind": "foundation",
-          "target": false,
-          "summary": "Understand the identity environment and attack behavior behind credential-access detections.",
-          "details": [
-            "Fill AD fundamentals if needed, then complete or review Active Directory Enumeration & Attacks.",
-            "You do not need to earn CPTS or CAPE for this preparation step."
-          ],
-          "resources": [
-            {
-              "label": "Microsoft · Active Directory Domain Services overview",
-              "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview",
-              "type": "free",
-              "note": "A free starting reference for the domain, directory, and authentication environment."
-            },
-            {
-              "label": "HTB · Introduction to Active Directory",
-              "url": "https://academy.hackthebox.com/app/module/74",
-              "type": "paid",
-              "note": "Fill the AD fundamentals if domains, users, groups, and authentication are unfamiliar."
-            },
-            {
-              "label": "HTB · Active Directory Enumeration & Attacks",
-              "url": "https://academy.hackthebox.com/course/preview/active-directory-enumeration--attacks",
-              "type": "paid",
-              "note": "Practice the identity and attack behavior recommended before Credential Access Tradecraft."
-            }
-          ],
-          "goal": "You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites.",
-          "platform": "windows",
-          "htbModule": false,
-          "requirement": "Preparation before Credential Access Tradecraft"
-        },
-        {
-          "id": "credential-access-tradecraft",
-          "title": "Credential Access Tradecraft Analysis",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Analyze credential-access behavior and turn the evidence into detections.",
-          "details": [
-            "Build on WinDbg, AD Enumeration & Attacks, Windows attack detection with Splunk, Python, C/C++, Win32, basic IDA, and COM."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Credential Access Tradecraft Analysis",
-              "url": "https://academy.hackthebox.com/course/preview/credential-access-tradecraft-analysis",
-              "type": "paid",
-              "note": "Apply AD, WinDbg, C/C++, Win32, and Splunk foundations to the required CDEP module."
-            },
-            {
-              "label": "Microsoft · Sysmon process-access events",
-              "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-10-processaccess",
-              "type": "free",
-              "note": "Reference source/target process access while reasoning about memory-access detections."
-            }
-          ],
-          "goal": "You can explain a credential-access behavior, its required access, and useful detection evidence.",
-          "platform": "windows",
-          "htbModule": true,
-          "requirement": "Required path module"
-        }
-      ]
-    },
-    {
-      "id": "windows-kernel",
-      "title": "Windows kernel",
-      "steps": [
-        {
-          "id": "kernel-telemetry",
-          "title": "Windows Kernel Telemetry & Detection Techniques",
-          "provider": "HTB",
-          "kind": "target",
-          "target": true,
-          "summary": "Build detections with a deeper understanding of kernel-level telemetry.",
-          "details": [
-            "Bring Process Injection, WinDbg, assembly, C/C++, and Windows API/process/thread/PE knowledge.",
-            "Its late placement manages difficulty; it does not formally require every preceding tradecraft module."
-          ],
-          "resources": [
-            {
-              "label": "HTB · Windows Kernel Telemetry & Detection Techniques",
-              "url": "https://academy.hackthebox.com/course/preview/windows-kernel-telemetry--detection-techniques",
-              "type": "paid",
-              "note": "Apply injection, WinDbg, assembly, C/C++, and Windows internals to detection telemetry."
-            },
-            {
-              "label": "Microsoft · Event Tracing for Windows",
-              "url": "https://learn.microsoft.com/en-us/windows/win32/etw/event-tracing-portal",
-              "type": "free",
-              "note": "Reference ETW providers, controllers, consumers, and event collection."
-            }
-          ],
-          "goal": "You can explain a kernel telemetry source, its evidence, and its limitations.",
-          "platform": "windows",
-          "htbModule": true,
-          "requirement": "Required path module"
+          "requirement": "Required path module",
+          "pathNumber": 4
         }
       ]
     },
     {
       "id": "linux-detection",
-      "title": "Linux detection",
+      "title": "Linux injection",
       "steps": [
         {
           "id": "linux-foundations",
@@ -891,7 +544,373 @@ window.ROADMAP = {
           "goal": "You can connect Linux injection behavior to process memory and detection evidence.",
           "platform": "linux",
           "htbModule": true,
-          "requirement": "Required path module"
+          "requirement": "Required path module",
+          "pathNumber": 5
+        }
+      ]
+    },
+    {
+      "id": "windows-detection",
+      "title": "Windows detection",
+      "steps": [
+        {
+          "id": "low-level-detectability",
+          "title": "Windows Low Level Detectability",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Deepen your understanding of low-level behavior and detection coverage.",
+          "details": [
+            "Build on assembly, YARA/Sigma, Process Injection, and C/C++.",
+            "This is module 6 in the official path. Windows API Monitoring and Hooking follows later as module 8."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Windows Low Level Detectability",
+              "url": "https://academy.hackthebox.com/course/preview/windows-low-level-detectability",
+              "type": "paid",
+              "note": "Apply assembly, injection, C/C++, and YARA/Sigma foundations in HTB."
+            }
+          ],
+          "goal": "You can explain which low-level signals support a detection and where visibility can fail.",
+          "platform": "windows",
+          "htbModule": true,
+          "requirement": "Required path module",
+          "pathNumber": 6
+        },
+        {
+          "id": "token-manipulation",
+          "title": "Detecting Access Token Manipulation Attacks",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Understand tokens, privileges, and impersonation as detection opportunities.",
+          "details": [
+            "Build on Windows command-line skills, malware analysis, assembly, C, and basic debugging.",
+            "Carry token and privilege knowledge into later tradecraft analysis."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Detecting Access Token Manipulation Attacks",
+              "url": "https://academy.hackthebox.com/course/preview/detecting-access-token-manipulation-attacks",
+              "type": "paid",
+              "note": "Practice token-manipulation analysis and detection in the required CDEP module."
+            },
+            {
+              "label": "Microsoft · Access tokens",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/secauthz/access-tokens",
+              "type": "free",
+              "note": "Reference primary and impersonation tokens, privileges, and the APIs that inspect them."
+            },
+            {
+              "label": "TrainSec · Windows System Programming 3",
+              "url": "https://trainsec.net/courses/windows-system-programming-3/",
+              "type": "paid",
+              "note": "Use the security and token lessons if the underlying C++/API behavior needs work."
+            }
+          ],
+          "goal": "You can explain how a token change affects identity, privileges, and observable behavior.",
+          "platform": "windows",
+          "htbModule": true,
+          "requirement": "Required path module",
+          "pathNumber": 7
+        },
+        {
+          "id": "api-monitoring",
+          "title": "Windows API Monitoring and Hooking",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Explore what API monitoring can reveal about Windows execution.",
+          "details": [
+            "Process Injection is explicitly recommended background.",
+            "Bring assembly, C/C++ pointers and structs, Splunk log analysis, and Windows attack detection knowledge."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Windows API Monitoring and Hooking",
+              "url": "https://academy.hackthebox.com/course/preview/windows-api-monitoring-and-hooking",
+              "type": "paid",
+              "note": "The required CDEP module applies monitoring and hooking to detection."
+            },
+            {
+              "label": "Microsoft · Detours",
+              "url": "https://github.com/microsoft/Detours",
+              "type": "free",
+              "note": "Study the official API-instrumentation project and its samples alongside your lab results."
+            }
+          ],
+          "goal": "You can explain what an API hook observes, changes, and misses.",
+          "platform": "windows",
+          "htbModule": true,
+          "requirement": "Required path module",
+          "pathNumber": 8
+        }
+      ]
+    },
+    {
+      "id": "windows-tradecraft",
+      "title": "Windows tradecraft",
+      "steps": [
+        {
+          "id": "com-wmi",
+          "title": "COM and WMI fundamentals",
+          "provider": "Mixed",
+          "kind": "foundation",
+          "target": false,
+          "summary": "Learn the Windows components behind WMI and persistence tradecraft.",
+          "details": [
+            "Cover interfaces, CLSIDs/IIDs, activation, registration, namespaces, providers, and event subscriptions.",
+            "Use focused reference reading and inspect examples in a lab."
+          ],
+          "resources": [
+            {
+              "label": "Microsoft · COM",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/com/component-object-model--com--portal",
+              "type": "free",
+              "note": "Free reference for interfaces, activation, registration, CLSIDs, and IIDs."
+            },
+            {
+              "label": "Microsoft · WMI",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page",
+              "type": "free",
+              "note": "Use the programming and administration guidance for namespaces, providers, and events."
+            },
+            {
+              "label": "TrainSec · Windows System Programming 3",
+              "url": "https://trainsec.net/courses/windows-system-programming-3/",
+              "type": "paid",
+              "note": "Its COM section provides guided C++ examples of activation, servers, clients, and registration."
+            }
+          ],
+          "goal": "You can explain COM activation and inspect a WMI namespace, provider, and event subscription.",
+          "platform": "windows",
+          "htbModule": false,
+          "requirement": "Preparation before WMI, persistence, and privilege escalation"
+        },
+        {
+          "id": "windows-privesc-foundation",
+          "title": "Windows privilege-escalation fundamentals",
+          "provider": "Mixed",
+          "kind": "foundation",
+          "target": false,
+          "summary": "Fill privilege-escalation knowledge gaps before the detection-focused tradecraft module.",
+          "details": [
+            "Complete or review the module if the underlying techniques are unfamiliar.",
+            "If you already have equivalent practical knowledge, avoid repeating it solely for this suggested study sequence."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Windows Privilege Escalation",
+              "url": "https://academy.hackthebox.com/course/preview/windows-privilege-escalation",
+              "type": "paid",
+              "note": "Fill technique gaps through guided labs before the detection-focused tradecraft module."
+            },
+            {
+              "label": "Windows Internals · Part 1",
+              "url": "https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals",
+              "type": "book",
+              "note": "Reference tokens, access checks, and security boundaries instead of memorizing tool commands."
+            }
+          ],
+          "goal": "You can explain a lab escalation’s initial access, misconfiguration or privilege, and resulting security context.",
+          "platform": "windows",
+          "htbModule": false,
+          "requirement": "Preparation before Privilege Escalation Tradecraft"
+        },
+        {
+          "id": "privesc-tradecraft",
+          "title": "Privilege Escalation Tradecraft Analysis",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Connect escalation techniques to debugger evidence and detection logic.",
+          "details": [
+            "WinDbg, token detection, Low Level Detectability, and privilege-escalation foundations are covered earlier.",
+            "Use your COM, Win32, basic IDA, C/C++, and Splunk skills during analysis."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Privilege Escalation Tradecraft Analysis",
+              "url": "https://academy.hackthebox.com/course/preview/privilege-escalation-tradecraft-analysis",
+              "type": "paid",
+              "note": "Apply the earlier WinDbg, token, low-level, and privilege-escalation study to detection."
+            }
+          ],
+          "goal": "You can connect an escalation’s code behavior to the resulting telemetry.",
+          "platform": "windows",
+          "htbModule": true,
+          "requirement": "Required path module",
+          "pathNumber": 9
+        },
+        {
+          "id": "persistence-tradecraft",
+          "title": "Persistence Tradecraft Analysis",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Investigate persistence mechanisms and develop evidence-based detections.",
+          "details": [
+            "Apply Low Level Detectability, COM, Win32, C/C++, basic reversing/IDA, and Splunk foundations."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Persistence Tradecraft Analysis",
+              "url": "https://academy.hackthebox.com/course/preview/persistence-tradecraft-analysis",
+              "type": "paid",
+              "note": "Apply low-level detectability, COM, Win32, basic reversing, and Splunk to persistence."
+            },
+            {
+              "label": "Microsoft · Autoruns",
+              "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns",
+              "type": "free",
+              "note": "Inspect autostart locations and compare a clean baseline with lab changes."
+            }
+          ],
+          "goal": "You can explain a persistence mechanism, its artifacts, and a validated detection.",
+          "platform": "windows",
+          "htbModule": true,
+          "requirement": "Required path module",
+          "pathNumber": 10
+        },
+        {
+          "id": "wmi-tradecraft",
+          "title": "WMI Tradecraft Analysis",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Analyze WMI behavior using Windows internals and telemetry.",
+          "details": [
+            "Bring COM, services, auditing, PowerShell, C++, ATT&CK, and Splunk knowledge."
+          ],
+          "resources": [
+            {
+              "label": "HTB · WMI Tradecraft Analysis",
+              "url": "https://academy.hackthebox.com/course/preview/wmi-tradecraft-analysis",
+              "type": "paid",
+              "note": "Analyze WMI behavior with COM, Windows internals, PowerShell, and Splunk foundations."
+            },
+            {
+              "label": "MITRE ATT&CK · WMI",
+              "url": "https://attack.mitre.org/techniques/T1047/",
+              "type": "free",
+              "note": "Use the technique references to compare legitimate administration with suspicious WMI execution."
+            },
+            {
+              "label": "Microsoft · Sysmon WMI events",
+              "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-19-wmievent-wmieventfilter-activity-detected",
+              "type": "free",
+              "note": "Reference filter, consumer, and binding events when checking WMI subscription telemetry."
+            }
+          ],
+          "goal": "You can trace WMI activity from the underlying mechanism to its detection evidence.",
+          "platform": "windows",
+          "htbModule": true,
+          "requirement": "Required path module",
+          "pathNumber": 11
+        },
+        {
+          "id": "active-directory-foundation",
+          "title": "Active Directory fundamentals and attacks",
+          "provider": "Mixed",
+          "kind": "foundation",
+          "target": false,
+          "summary": "Understand the identity environment and attack behavior behind credential-access detections.",
+          "details": [
+            "Fill AD fundamentals if needed, then complete or review Active Directory Enumeration & Attacks.",
+            "You do not need to earn CPTS or CAPE for this preparation step."
+          ],
+          "resources": [
+            {
+              "label": "Microsoft · Active Directory Domain Services overview",
+              "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview",
+              "type": "free",
+              "note": "A free starting reference for the domain, directory, and authentication environment."
+            },
+            {
+              "label": "HTB · Introduction to Active Directory",
+              "url": "https://academy.hackthebox.com/app/module/74",
+              "type": "paid",
+              "note": "Fill the AD fundamentals if domains, users, groups, and authentication are unfamiliar."
+            },
+            {
+              "label": "HTB · Active Directory Enumeration & Attacks",
+              "url": "https://academy.hackthebox.com/course/preview/active-directory-enumeration--attacks",
+              "type": "paid",
+              "note": "Practice the identity and attack behavior recommended before Credential Access Tradecraft."
+            }
+          ],
+          "goal": "You can explain domain authentication, common trust and permission relationships, and a lab attack’s prerequisites.",
+          "platform": "windows",
+          "htbModule": false,
+          "requirement": "Preparation before Credential Access Tradecraft"
+        },
+        {
+          "id": "credential-access-tradecraft",
+          "title": "Credential Access Tradecraft Analysis",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Analyze credential-access behavior and turn the evidence into detections.",
+          "details": [
+            "Build on WinDbg, AD Enumeration & Attacks, Windows attack detection with Splunk, Python, C/C++, Win32, basic IDA, and COM."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Credential Access Tradecraft Analysis",
+              "url": "https://academy.hackthebox.com/course/preview/credential-access-tradecraft-analysis",
+              "type": "paid",
+              "note": "Apply AD, WinDbg, C/C++, Win32, and Splunk foundations to the required CDEP module."
+            },
+            {
+              "label": "Microsoft · Sysmon process-access events",
+              "url": "https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-10-processaccess",
+              "type": "free",
+              "note": "Reference source/target process access while reasoning about memory-access detections."
+            }
+          ],
+          "goal": "You can explain a credential-access behavior, its required access, and useful detection evidence.",
+          "platform": "windows",
+          "htbModule": true,
+          "requirement": "Required path module",
+          "pathNumber": 12
+        }
+      ]
+    },
+    {
+      "id": "windows-kernel",
+      "title": "Windows kernel",
+      "steps": [
+        {
+          "id": "kernel-telemetry",
+          "title": "Windows Kernel Telemetry & Detection Techniques",
+          "provider": "HTB",
+          "kind": "target",
+          "target": true,
+          "summary": "Build detections with a deeper understanding of kernel-level telemetry.",
+          "details": [
+            "Bring Process Injection, WinDbg, assembly, C/C++, and Windows API/process/thread/PE knowledge.",
+            "Its late placement manages difficulty; it does not formally require every preceding tradecraft module."
+          ],
+          "resources": [
+            {
+              "label": "HTB · Windows Kernel Telemetry & Detection Techniques",
+              "url": "https://academy.hackthebox.com/course/preview/windows-kernel-telemetry--detection-techniques",
+              "type": "paid",
+              "note": "Apply injection, WinDbg, assembly, C/C++, and Windows internals to detection telemetry."
+            },
+            {
+              "label": "Microsoft · Event Tracing for Windows",
+              "url": "https://learn.microsoft.com/en-us/windows/win32/etw/event-tracing-portal",
+              "type": "free",
+              "note": "Reference ETW providers, controllers, consumers, and event collection."
+            }
+          ],
+          "goal": "You can explain a kernel telemetry source, its evidence, and its limitations.",
+          "platform": "windows",
+          "htbModule": true,
+          "requirement": "Required path module",
+          "pathNumber": 13
         }
       ]
     },

@@ -5,7 +5,7 @@ A DE&TH DIARIES guide to HTB Certified Detection Engineering Principal.
 - [Blog](https://deathdiaries.com/blogs/road-to-htb-cdep/)
 - [GitHub Pages](https://thefinalflex.github.io/road-to-detection-engineering/)
 
-The guide distinguishes the 13-module official path order from a suggested study sequence. Core foundations come first; targeted preparation sits beside the modules that use it. Extra help and deeper study is optional. External courses and CDSA are not certification eligibility requirements.
+The main roadmap follows the official 13-module HTB path order. Core foundations come first; targeted preparation sits beside the modules that use it. Extra help and deeper study is optional. External courses and CDSA are not certification eligibility requirements.
 
 Verified October 12, 2026 against the official Academy path, certification page, and help articles linked in the guide. Eligibility requires 100% relevant path completion and a valid voucher; CDEP has a 10-day exam window. The published 75 study days means 600 hours, not calendar days.
 
