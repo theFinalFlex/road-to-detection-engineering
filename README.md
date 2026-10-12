@@ -15,4 +15,4 @@ Edit `data.js`, then run `node generate-markdown.cjs` to update `roadmap.md`. Pr
 
 The deathdiaries.com blog uses the same content and assets, with its own canonical URL. Sync the page files there after content updates.
 
-The minimalist page uses native expandable topics, the original DE&TH wordmark, Oxanium headings, restrained pink/gold accents, and credited BLAME! architecture and reaction artwork. It has no accounts, analytics, or progress tracking. Training links open on provider sites; course content and answers are not copied.
+The minimalist page uses native expandable topics, the original DE&TH wordmark, Oxanium headings, the site’s purple palette and industrial cyberpunk art, and credited BLAME! architecture and reaction artwork. It has no accounts, analytics, or progress tracking. Training links open on provider sites; course content and answers are not copied.

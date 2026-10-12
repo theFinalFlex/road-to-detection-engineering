@@ -1,10 +1,10 @@
-:root{color-scheme:dark;--bg:#080D12;--fg:#F2F6F7;--muted:#9b9b95;--line:#32322f;--mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif}
+:root{color-scheme:dark;--bg:#080709;--fg:#f2edf8;--muted:#b5abbf;--line:#39313f;--mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:35px}
 body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.75 var(--sans);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration-color:#65655e;text-underline-offset:4px}a:hover{color:#fff}
 a,summary{touch-action:manipulation}a:focus-visible,summary:focus-visible{outline:1px solid #e2e2da;outline-offset:6px}
-::selection{background:#ddd;color:#111}
+::selection{background:#7835cf;color:#fff}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip-link{position:absolute;top:-80px;left:15px;padding:10px;background:var(--fg);color:var(--bg);z-index:10}.skip-link:focus{top:10px}
 .page{max-width:1032px;margin:0 auto;padding:72px 48px 36px}
@@ -36,4 +36,18 @@ h1>span{display:block;font:10px/1.6 var(--mono);text-transform:uppercase;letter-
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 @font-face{font-family:Oxanium;src:url("Oxanium-ExtraBold.ttf") format("truetype");font-weight:800;font-display:swap}
-.brand{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:52px;text-decoration:none}.brand img{width:180px;height:auto;max-width:65%}.brand span{font:9px var(--mono);color:#CFA463}.page-header h1{font-family:Oxanium,var(--sans);font-weight:800;font-size:clamp(36px,5vw,64px);letter-spacing:-2px;line-height:1.12}.page-header h1>span{color:#EEA8C7}.page-header{margin-bottom:54px}.guide-intro{margin:0 0 80px 213px;color:var(--muted);font-size:13px}.guide-intro>p:first-child{color:var(--fg)}.sequence-note{font-size:11px}.official-path-order{border-top:1px solid var(--line)}.official-path-order summary{color:#CFA463;font-size:12px}.official-path-order ol{padding-left:24px;font-size:12px;line-height:2.3}.phase h2{color:#CFA463}.topic-context{color:#EEA8C7}.topic-content .topic-content{padding-right:0}.resource-group a:hover{color:#EEA8C7}@media(max-width:700px){.brand{margin-bottom:32px}.brand img{width:145px}.page-header{margin-bottom:32px}.page-header h1{font-size:clamp(25px,6vw,42px);letter-spacing:-1px}.guide-intro{margin:0 0 54px}.architecture{height:220px}}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:52px;text-decoration:none}.brand img{width:180px;height:auto;max-width:65%}.brand span{font:9px var(--mono);color:#b786e5}.page-header h1{font-family:Oxanium,var(--sans);font-weight:800;font-size:clamp(36px,5vw,64px);letter-spacing:-2px;line-height:1.12}.page-header h1>span{color:#c69cff}.page-header{margin-bottom:54px}.guide-intro{margin:0 0 80px 213px;color:var(--muted);font-size:13px}.guide-intro>p:first-child{color:var(--fg)}.sequence-note{font-size:11px}.official-path-order{border-top:1px solid var(--line)}.official-path-order summary{color:#b786e5;font-size:12px}.official-path-order ol{padding-left:24px;font-size:12px;line-height:2.3}.phase h2{color:#b786e5}.topic-context{color:#c69cff}.topic-content .topic-content{padding-right:0}.resource-group a:hover{color:#c69cff}@media(max-width:700px){.brand{margin-bottom:32px}.brand img{width:145px}.page-header{margin-bottom:32px}.page-header h1{font-size:clamp(25px,6vw,42px);letter-spacing:-1px}.guide-intro{margin:0 0 54px}.architecture{height:220px}}
+
+/* Current DE&TH DIARIES palette and static cyberpunk art. */
+body{background:radial-gradient(ellipse at 80% 8%,#25123555,transparent 38%),var(--bg)}
+a:focus-visible,summary:focus-visible{outline:2px solid #c69cff}.brand span{color:#b786e5}
+.page-header{position:relative;gap:42px;grid-template-columns:1fr 1.18fr}
+.page-header h1{position:relative;z-index:1;text-shadow:2px 0 30px #7835cf35}
+.architecture{position:relative;height:370px;background:#110b19;clip-path:polygon(25px 0,100% 0,100% calc(100% - 25px),calc(100% - 25px) 100%,0 100%,0 25px)}
+.architecture .cyber-industrial{position:absolute;inset:0;object-position:50% 43%;filter:hue-rotate(280deg) saturate(.8) brightness(.82);width:100%;height:100%}
+.architecture .blame-architecture{position:absolute;right:0;bottom:0;width:43%;height:49%;object-position:50% 48%;filter:grayscale(1) contrast(1.2);opacity:.4;mask-image:radial-gradient(ellipse at 65% 65%,#000,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 65% 65%,#000,transparent 70%);mix-blend-mode:screen}
+.architecture:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08070938,transparent 35%),repeating-linear-gradient(0deg,transparent,transparent 3px,#08070920 4px);pointer-events:none}
+.guide-intro{position:relative}.phase-body{border-top-color:#493452}.topic>summary:hover{color:#dfbaff}.topic-chevron{color:#a67bc6}.topic[open]{border-bottom-color:#493452}.topic-summary{color:#e4dbea}.resource-group a{color:#d7b5f8}.resource-group h4{color:#c4b2d2}.topic-context{color:#c69cff}.page-footer{border-top-color:#493452;color:#aa96ba}.topic-notes{color:#b9adc3}.phase h2{color:#b786e5}
+.manga-panel{position:relative;padding-left:12px;border-left:1px solid #674879}.manga-panel:before{content:"";position:absolute;width:32px;height:1px;background:#b786e5;left:-1px;top:-12px}.manga-panel figcaption{color:#aa96ba}
+@media(max-width:700px){.page-header{gap:22px}.architecture{height:240px}.architecture .blame-architecture{width:55%;height:44%}.page-header h1{font-size:clamp(25px,6vw,42px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
